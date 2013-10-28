@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>hams is best</title>
+
+	<script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
+	<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.4"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		/* pushes the page to the full capacity of the viewing area */
+		html {height:100%;}
+		body {height:100%; margin:0; padding:0;}
+		/* prepares the background image to full capacity of the viewing area */
+		#bg {position:fixed; top:0; left:0; width:100%; height:100%;}
+		/* places the content ontop of the background image */
+		#content {position:relative; z-index:1;}
+	</style>
+  <!--[if IE 6]>
+  <style type="text/css">
+	  /* some css fixes for IE browsers */
+	  html {overflow-y:hidden;}
+	  body {overflow-y:auto;}
+	  #bg {position:absolute; z-index:-1;}
+	  #content {position:static;}
+  </style>
+  <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  <div id="bg"><img src="https://sites.google.com/site/astest0000001/test/hangshowbg1.jpg?attredirects=0&d=1" width="100%" height="100%" alt=""></div>
+	  <script type="text/javascript">
+		  function init() {
+			  // When API is ready...
+			  gapi.hangout.onApiReady.add(
+					  function(eventObj) {
+					  var id = gapi.hangout.getLocalParticipantId();
+					  var canvas = gapi.hangout.layout.getVideoCanvas();
+
+					  canvas.setWidth(600);
+					  canvas.setPosition(0 , 0);
+					  });
+		  }
+// Add startup listener immediately.  If you need an
+// OAuth 2.0 access token, your startup will be different.
+		init();	
+	</script>
+
+  </body>
+ </html>
