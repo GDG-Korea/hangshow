@@ -1,0 +1,114 @@
+121.125.70.84     (NHN 광고 서버 - J5k_1.7.7)
+118.220.172.204   (NHN 광고 서버 - J5K_1.7.7)
+118.220.175.195   (NHN 광고 서버 - J5K_1.7.7)
+58.227.194.71    
+1.234.28.27        (벅스 - J5k_1.7.5)
+118.220.172.203   (NHN 쥬니버 이미지 - J5K_1.7.7)
+101.79.252.40     (sm1팀 syslog 서버 – CentOS 5.3 32bit)
+123.111.233.189   (카르마2/엔씨소프트이미지/케이에스존-1팀 - J5k_1.7.9)
+112.175.62.8       (NHN 미투데이 - J5K_1.7.7)
+58.227.194.67 /wstatic 
+123.111.233.151/vaccine.dn.naver.com
+
+
+확인 방법
+ll --time-style long-iso /root/install.log
+
+
+#!/bin/bash
+
+# Package definitions
+PACKAGE_NAME="CMS Database"
+PACKAGE_DIRECTORY="package"
+SERVICE_DIRECTORY="/service/"
+MYSQL_DIRECTORY="mysql"
+MYSQL_START_COMMAND="/etc/init.d/mysql"
+TARGET_START_SCRIPT="/etc/rc.d/rc.local"
+MYSQL_START_FLAG="/tmp/mysql_start_flag"
+
+# Log definitions
+# Log definitions
+log() { logger -t $PACKAGE_NAME "$@"; echo "$@"; }
+
+# change directory
+log "Change directory..."
+cd $PACKAGE_DIRECTORY
+log "Change directory...Completed!"
+
+# Uninstall exist mysql
+log "Uninstall intalled mysql..."
+yum -y remove mysql
+log "Uninstall intalled mysql...Completed!"
+
+# install library
+log "Install termcap-devel library..."
+yum -y install libtermcap-devel
+log "Install termcap-devel library...Completed!"
+
+# copy mysql 
+log "Install mysql..."
+if [ -d $SERVICE_DIRECTORY/$MYSQL_DIRECTORY ]
+then
+	echo "$MYSQL_DIRECTORY is already installed. Skip this step"
+        echo -n "For initializing STATISTICS DB, Insert mysql root password: "
+        read PASSWORD
+else
+	mkdir $SERVICE_DIRECTORY
+	cp -rf $MYSQL_DIRECTORY $SERVICE_DIRECTORY
+
+	# add mysql user
+	log "create mysql user..."
+	adduser mysql
+	chown -R mysql.mysql $SERVICE_DIRECTORY/$MYSQL_DIRECTORY
+	mkdir $SERVICE_DIRECTORY/db
+	mkdir $SERVICE_DIRECTORY/db/mysql
+	chown -R mysql.mysql $SERVICE_DIRECTORY/db
+	log "create mysql user...Completed!"
+	
+	# setup system
+	log "setup mysql..."
+	cp -rf $SERVICE_DIRECTORY/$MYSQL_DIRECTORY/share/mysql/mysql.server /etc/init.d/mysql
+	chkconfig --add mysql
+	chkconfig --level 345 mysql on
+	echo "pathmunge $SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin" >> /etc/profile
+	cp -rf my.cnf /etc/my.cnf
+	chmod 700 /etc/my.cnf
+	chown mysql.mysql /etc/my.cnf
+	log "setup mysql...Completed!"
+	
+	# Initialize mysql
+	log "Initialize mysql... It need a few minutes..."
+	$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql_install_db --user mysql
+	/etc/init.d/mysql start
+	
+	echo "Changing password for mysql root."
+	echo -n "New mysql root password: "
+	read PASSWORD
+	$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysqladmin -u root password $PASSWORD
+	log "Initialize mysql...Completed!"
+fi
+	
+log "Setting default DATA..."
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "CREATE DATABASE CMSDB"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "CREATE DATABASE transcoder"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "GRANT ALL PRIVILEGES ON CMSDB.* TO cmsdb@'%' IDENTIFIED BY 'cmsdb!@#$'"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "GRANT ALL PRIVILEGES ON CMSDB.* TO cmsdb@localhost IDENTIFIED BY 'cmsdb!@#$'"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "GRANT ALL PRIVILEGES ON transcoder.* TO transdb@'%' IDENTIFIED BY 'transdb!@#$'"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD -Bse "GRANT ALL PRIVILEGES ON transcoder.* TO transdb@localhost IDENTIFIED BY 'transdb!@#$'"
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD CMSDB < CMSDB_WEB_DEFAULT.sql
+$SERVICE_DIRECTORY/$MYSQL_DIRECTORY/bin/mysql -uroot -p$PASSWORD transcoder < TRANSCODER_WEB_DEFAULT.sql
+log "Setting default DATA...Completed!"
+
+# add config for auto start to mysql
+log "Adding auto start config...start"
+
+if [ -f $MYSQL_START_FLAG ]
+then
+        echo "mysql config is already added"
+else
+        echo $MYSQL_START_COMMAND >> $TARGET_START_SCRIPT
+fi
+
+log "Adding auto start config...completed"
+	
+log "$PACKAGE_NAME Install completed"
