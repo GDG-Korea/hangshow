@@ -20,9 +20,6 @@ public class ServerMain {
 	public static String default_db_user= "transdb";
 	public static String default_db_passwd="transdb!@#$";
 	
-	
-	
-	
 	public static void main(String[] args) 	      
 			throws AuthenticationException, MalformedURLException, IOException, ServiceException {
 		
