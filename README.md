@@ -1,4 +1,4 @@
-HangShow
+﻿HangShow
 ========
 
 Google Hangout Presentation Sharing Tools through On-Air
@@ -8,13 +8,18 @@ Google Hangout Presentation Sharing Tools through On-Air
 안드로이드 스마트폰 행쇼 어플을 통해서는 행아웃과 연동, 발표의 포인터 기능, 행쇼를 이용했던 영상들 등 정보들을 사용 및 확인할 수 있습니다.
 
 1. 주요 특징
- 1. 화면 로고, 타이틀 표시
- 2. 
+ 1. 화면 로고, 
+ 2. 타이틀 표시
+ 3. 행아웃 온에어 시 안드로이드 앱으로 푸시 알람
+ 4. 녹화 화면/음성 선택
+ 5. 크롬앱 런처 
+ 6. 안드로이드 행쇼앱 ( 라이브 푸시 알람, VOD 다시보기, 커뮤니티 )
 
 2. 설치가이드 
  1. 설치 앱 경로
-  1. HangOut: https://hangoutsapi.talkgadget.google.com/hangouts/_?gid=800618133436
+  1. Chrome Luncher : https://chrome.google.com/webstore/detail/hangshow/fndliabekjoilhhigdoojhcfmbimhang
   2. Android: https://play.google.com/store/apps/details?id=com.gdgincheon.Hangshow.demos   
+  3. Hangout : https://hangoutsapi.talkgadget.google.com/hangouts/_?gid=800618133436
  2. Setting
   1. 위 Hangout 확장을 등록하신 후, On-Air 브로드케시팅을 실행 하신 후 Hangout확장을 실행 하시면 됩니다. 
  3. Q&A
