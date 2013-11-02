@@ -1,5 +1,6 @@
 {
   "name": "HangShow",
+<<<<<<< HEAD
   "description": "Record Your Presentation
 ",
   "manifest_version":2,
@@ -11,12 +12,24 @@
     "launch": {
       "web_url": "http://bit.ly/Hl2wMn"
     }
+=======
+  "description": "Record Your Presentation\nhttps://hangoutsapi.talkgadget.google.com/hangouts/_?gid=800618133436",
+  "version": "0.5.2",
+  "manifest_version":2,
+  "browser_action": {
+    "default_icon" : "chrome-onaire-19-yellow.png",
+    "default_title": "HangShow"
+>>>>>>> origin/HangshowServer
   },
   "icons": {
-    "128": "Logo.png"
+    "128": "chrome-onaire-128-yellow.png",
+    "48" : "chrome-onaire-48-yellow.png",
+    "16" : "chrome-onaire-16-yellow.png"
   },
+  "background": {"persistent": false, "scripts": ["hangshow.js"]},
   "permissions": [
     "unlimitedStorage",
     "notifications"
   ]
 }
+
