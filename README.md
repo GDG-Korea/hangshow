@@ -17,9 +17,9 @@ Google Hangout Presentation Sharing Tools through On-Air
 
 2. 설치가이드 
  1. 설치 앱 경로
-  1. Chrome Luncher : https://chrome.google.com/webstore/detail/hangshow/fndliabekjoilhhigdoojhcfmbimhang
-  2. Android: https://play.google.com/store/apps/details?id=com.gdgincheon.Hangshow.demos   
-  3. Hangout : https://hangoutsapi.talkgadget.google.com/hangouts/_?gid=800618133436
+  - Chrome Luncher : https://chrome.google.com/webstore/detail/hangshow/fndliabekjoilhhigdoojhcfmbimhang
+  - Android: https://play.google.com/store/apps/details?id=com.gdgincheon.Hangshow.demos   
+  - Hangout : https://hangoutsapi.talkgadget.google.com/hangouts/_?gid=800618133436
  2. Setting
-  1. 위 Hangout 확장을 등록하신 후, On-Air 브로드케시팅을 실행 하신 후 Hangout확장을 실행 하시면 됩니다. 
+  - 위 Hangout 확장을 등록하신 후, On-Air 브로드케시팅을 실행 하신 후 Hangout확장을 실행 하시면 됩니다. 
  3. Q&A
