@@ -20,16 +20,17 @@ public class ServerMain {
 	public static String default_db_user= "transdb";
 	public static String default_db_passwd="transdb!@#$";
 	
+	
 	public static void main(String[] args) 	      
 			throws AuthenticationException, MalformedURLException, IOException, ServiceException {
 		
-	    String USERNAME = "gdg.hangshow@gmail.com";
+	    String _USERNAME = "gdg.hangshow@gmail.com";
 	    String PASSWORD = "Hangsh0w";
 
 		System.out.println("Step 1: Login");
 	    SpreadsheetService service =
 	        new SpreadsheetService("MySpreadsheetIntegration-v1");
-	    service.setUserCredentials(USERNAME, PASSWORD);		
+	    service.setUserCredentials(_USERNAME, PASSWORD);		
 	    service.setProtocolVersion(SpreadsheetService.Versions.V3);
 	    
 	    URL SPREADSHEET_FEED_URL = new URL(
@@ -94,7 +95,7 @@ public class ServerMain {
 		    row.getCustomElements().setValueLocal("test3", "26");
 		    row.getCustomElements().setValueLocal("test4", "176");
 		    
-		    row = service.insert(listFeedUrl, row);	      
+		    //row = service.insert(listFeedUrl, row);	      
 	    }
 	    
 /*	    // Create a local representation of the new worksheet.
