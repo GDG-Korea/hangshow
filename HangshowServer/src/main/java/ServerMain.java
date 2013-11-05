@@ -19,83 +19,155 @@ public class ServerMain {
 	public static String default_db_url= "jdbc:mysql://localhost";
 	public static String default_db_user= "transdb";
 	public static String default_db_passwd="transdb!@#$";
-	
+    final static String _USERNAME = "gdg.hangshow@gmail.com";
+    final static String _PASSWORD = "Hangsh0w";
+    final static String SPREADSHEET_NAME = "Hangshow-Feed";
+    final static String SPREADSHEET_SHEET_MAIN = "Main";
+    final static String SPREADSHEET_READY ="Ready";
+    
+    final static String FIELD_YOUTUBE ="youtube-content-id";
+    final static String FIELD_TITLE ="title";
+    final static String FIELD_DESC ="description";
+    final static String FIELD_TAGS ="tags";
+    final static String FIELD_OWNER ="owner-id";
+    final static String FIELD_CONFERENCE ="conference-name";
+    final static String FIELD_START ="time-start";
+    
+    final static String QEURYSTRING_YOUTUBE ="youtube-content-id";
+    final static String QEURYSTRING_TITLE ="title";
+    final static String QEURYSTRING_DESC ="description";
+    final static String QEURYSTRING_TAGS ="tags";
+    final static String QEURYSTRING_OWNER ="owner-id";
+    final static String QEURYSTRING_CONFERENCE ="conference-name";
+    final static String QEURYSTRING_START ="time-start";
+    
+    static SpreadsheetEntry _mainSheet = null;
+    static SpreadsheetService _service = null;
+    static WorksheetEntry _mainWorksheet = null;
+    static ServerMain _mainServer = new ServerMain();
+    final static String SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=행쇼테스트&description=행쇼테스트입니다&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";
+
+    public void printAllRows(WorksheetEntry worksheet) throws IOException, ServiceException{
+		// Fetch the list feed of the worksheet.
+		URL listFeedUrl = worksheet.getListFeedUrl();
+		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
+
+		System.out.print("\t" + "worksheet size:"
+				+ listFeed.getEntries().size() + "\n");
+
+		// Create a local representation of the new row.
+
+		// Iterate through each row, printing its cell values.
+		for (ListEntry row : listFeed.getEntries()) {
+			// Print the first column's cell value
+			// System.out.print("\t\t["+row.getTitle().getPlainText() +
+			// "]\t");
+			// Iterate over the remaining columns, and print each cell value
+
+			for (String tag : row.getCustomElements().getTags()) {
+				System.out.print("\t" + tag + ":"
+						+ row.getCustomElements().getValue(tag));
+			}
+			System.out.println();
+		}
+    }
+    
+    public void insertRow(Request req) throws IOException, ServiceException{
+		if(_mainWorksheet != null){
+			ListEntry row = new ListEntry();
+			row.getCustomElements().setValueLocal(FIELD_YOUTUBE, 	req.queryParams(FIELD_YOUTUBE));
+			row.getCustomElements().setValueLocal(FIELD_TITLE, 		req.queryParams(FIELD_TITLE));
+			row.getCustomElements().setValueLocal(FIELD_DESC, 		req.queryParams(FIELD_DESC));
+			row.getCustomElements().setValueLocal(FIELD_TAGS, 		req.queryParams(FIELD_TAGS));
+			row.getCustomElements().setValueLocal(FIELD_OWNER, 		req.queryParams(FIELD_OWNER));
+			row.getCustomElements().setValueLocal(FIELD_CONFERENCE, req.queryParams(FIELD_CONFERENCE));
+			row.getCustomElements().setValueLocal(FIELD_START, 		req.queryParams(FIELD_START));
+
+			URL listFeedUrl = _mainWorksheet.getListFeedUrl();
+			row = _service.insert(listFeedUrl, row);
+		}
+    }
+    
 	public static void main(String[] args) 	      
 			throws AuthenticationException, MalformedURLException, IOException, ServiceException {
 		
-	    String USERNAME = "gdg.hangshow@gmail.com";
-	    String PASSWORD = "Hangsh0w";
 
-		System.out.println("Step 1: Login");
-	    SpreadsheetService service =
-	        new SpreadsheetService("MySpreadsheetIntegration-v1");
-	    service.setUserCredentials(USERNAME, PASSWORD);		
-	    service.setProtocolVersion(SpreadsheetService.Versions.V3);
-	    
-	    URL SPREADSHEET_FEED_URL = new URL(
-	            "https://spreadsheets.google.com/feeds/spreadsheets/private/full");
-	    
-		System.out.println("Step 2");
-	    SpreadsheetFeed feed = service.getFeed(SPREADSHEET_FEED_URL, SpreadsheetFeed.class);
-	    List<SpreadsheetEntry> spreadsheets = feed.getEntries();
-
-		System.out.println("Step 3");
-	    // Iterate through all of the spreadsheets returned
-	    for (SpreadsheetEntry spreadsheet : spreadsheets) {
-	      // Print the title of this spreadsheet to the screen
-	      System.out.println(spreadsheet.getTitle().getPlainText());
-	    }	    
 		
-	    // TODO: Choose a spreadsheet more intelligently based on your
-	    // app's needs.
-	    int idxSheet = 0;
-	    SpreadsheetEntry spreadsheet = spreadsheets.get(idxSheet);
-	    System.out.println(idxSheet+" of the sheet index -  title:"+spreadsheet.getTitle().getPlainText());
+		get(new Route("/onair/insert") {
+			@Override
+			public Object handle(Request request, Response response) {
+				response.type("text/xml");
+				
+				try {
+					_mainServer.insertRow(request);
+					_mainServer.printAllRows(_mainServer._mainWorksheet);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ServiceException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
+				//return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<status>"+request.queryParams(FIELD_YOUTUBE)+"</status>";
+				return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<status>"+request.queryParams(FIELD_YOUTUBE)+"</status>";
+			}
+		});
+		
+		
+		System.out.println("Step 1: Login");
+		_service = new SpreadsheetService("MySpreadsheetIntegration-v1");
+		_service.setUserCredentials(_USERNAME, _PASSWORD);
+		_service.setProtocolVersion(SpreadsheetService.Versions.V3);
 
-	    // Make a request to the API to fetch information about all
-	    // worksheets in the spreadsheet.
-	    List<WorksheetEntry> worksheets = spreadsheet.getWorksheets();
+		URL SPREADSHEET_FEED_URL = new URL(
+				"https://spreadsheets.google.com/feeds/spreadsheets/private/full");
+
+		System.out.println("Step 2: SpreadSheet Entries");
+		SpreadsheetFeed feed = _service.getFeed(SPREADSHEET_FEED_URL,
+				SpreadsheetFeed.class);
+		List<SpreadsheetEntry> spreadsheets = feed.getEntries();
+
+		System.out.println("Step 3: Show SpreadSheet's Name");
+		// Iterate through all of the spreadsheets returned
+		for (SpreadsheetEntry spreadsheet : spreadsheets) {
+			// Print the title of this spreadsheet to the screen
+			System.out.println(spreadsheet.getTitle().getPlainText());
+			if (spreadsheet.getTitle().getPlainText().equals(SPREADSHEET_NAME)) {
+				_mainSheet = spreadsheet;
+			}
+		}
+
+		System.out.println("Step 4: Select Main Sheet");
+		// TODO: Choose a spreadsheet more intelligently based on your
+		// app's needs.
+		if (_mainSheet != null) {
+			System.out.println("Cannot find Main Sheet");
+		} else {
+			int idxSheet = 0;
+			_mainSheet = spreadsheets.get(idxSheet);
+			System.out.println(idxSheet + " of the sheet index -  title:"
+					+ _mainSheet.getTitle().getPlainText());
+		}
+
+		// Make a request to the API to fetch information about all
+		// worksheets in the spreadsheet.
+		List<WorksheetEntry> worksheets = _mainSheet.getWorksheets();
 
 	    // Iterate through each worksheet in the spreadsheet.
-	    for (WorksheetEntry worksheet : worksheets) {
-	      // Get the worksheet's title, row count, and column count.
-	      String title = worksheet.getTitle().getPlainText();
-	      int rowCount = worksheet.getRowCount();
-	      int colCount = worksheet.getColCount();
+		for (WorksheetEntry worksheet : worksheets) {
+			// Get the worksheet's title, row count, and column count.
+			String title = worksheet.getTitle().getPlainText();
+			int rowCount = worksheet.getRowCount();
+			int colCount = worksheet.getColCount();
 
-	      // Print the fetched information to the screen for this worksheet.
-	      System.out.println("\t" + title + "- rows:" + rowCount + " cols: " + colCount);
-	      
-	      
-		    // Fetch the list feed of the worksheet.
-		    URL listFeedUrl = worksheet.getListFeedUrl();
-		    ListFeed listFeed = service.getFeed(listFeedUrl, ListFeed.class);
-		    
-		    
-		    System.out.print("\t"+"worksheet size:"+listFeed.getEntries().size()+"\n");
-		    
-		    // Create a local representation of the new row.
-
-		    // Iterate through each row, printing its cell values.
-		    for (ListEntry row : listFeed.getEntries()) {
-		      // Print the first column's cell value
-		      //System.out.print("\t\t["+row.getTitle().getPlainText() + "]\t");
-		      // Iterate over the remaining columns, and print each cell value
-		      
-		      for (String tag : row.getCustomElements().getTags()) {
-		        System.out.print("\t"+tag+":"+row.getCustomElements().getValue(tag));
-		      }
-		      System.out.println();
-		    }
-		    
-		    ListEntry row = new ListEntry();
-		    row.getCustomElements().setValueLocal("test1", "Joe");
-		    row.getCustomElements().setValueLocal("test2", "Smith");
-		    row.getCustomElements().setValueLocal("test3", "26");
-		    row.getCustomElements().setValueLocal("test4", "176");
-		    
-		    row = service.insert(listFeedUrl, row);	      
-	    }
+			// Print the fetched information to the screen for this worksheet.
+			System.out.println("\t" + title + "- rows:" + rowCount + " cols: "
+					+ colCount);
+			if (title.equals(SPREADSHEET_SHEET_MAIN)) {
+				_mainWorksheet = worksheet;
+			}
+		}
+		
 	    
 /*	    // Create a local representation of the new worksheet.
 	    WorksheetEntry worksheet = new WorksheetEntry();
@@ -145,7 +217,7 @@ public class ServerMain {
 			public Object handle(Request request, Response response) {
 				response.type("text/xml");
 				return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><news>"
-						+ request.params("section") + "</news>";
+						+ request.params("section") + ":"+request.queryParams("hams")+"</news>";
 			}
 		});
 
