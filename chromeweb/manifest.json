@@ -5,17 +5,14 @@
   "manifest_version":2,
   "browser_action": {
     "default_icon": {
-      "19": "chrome-onaire-19-yellow.png",
-      "38": "chrome-onaire-48-yellow.png"
+      "19": "ChromeWeb_19.png",
+      "38": "ChromeWeb_38.png"
     },
     "default_title": "HangShow"
   },
   "icons": {
-    "128": "chrome-onaire-128-yellow.png",
-    "48" : "chrome-onaire-48-yellow.png",
-    "16" : "chrome-onaire-16-yellow.png",
-    "19": "chrome-onaire-19-yellow.png", 
-    "38": "chrome-onaire-48-yellow.png" 
+    "19": "ChromeWeb_19.png", 
+    "38": "ChromeWeb_38.png" 
   },
   "background": {"persistent": false, "scripts": ["hangshow.js"]},
   "permissions": ["unlimitedStorage", "notifications"] 

@@ -26,10 +26,11 @@
 		/* pushes the page to the full capacity of the viewing area */
 		html {height:100%;}
 		/*body {height:100%; background-color:#38393D; margin:0; padding:0;}*/
-		body {height:100%; background-color:#FFFFFF; margin:0; padding:0;}
+		body {height:100%; background-color:#181818; margin:0; padding:0;}
 		/* prepares the background image to full capacity of the viewing area */
 		#bg {position:absolute; top:0; left:0; width:100%; height:100%;}
 		#hams {position: relative; top: 0}
+		#bg-image-div {visibility: hidden}
 		/* places the content ontop of the background image */
 		/*#content {position:relative; z-index:1;}*/
 	</style>
@@ -50,19 +51,23 @@
     <![endif]-->
 
 <style type="text/css"> <!--  
-	 #sorry-message{
+	 #sorry_message{
 	   visibility: hidden; 
 	 }
 	 --> 
  </style>    
   </head>
-  <body bgcolor="#38393D" >
+  <body bgcolor="#181818" >
   <!-- <body background="ttps://sites.google.com/site/astest0000001/test/bg.png?attredirects=0&d=1"> -->
 	  <!-- <div id="bg"><img src="https://sites.google.com/site/astest0000001/test/bg.png?attredirects=0&d=1" width="100%" height="100%" alt=""> -->
 	  <div id="bg" width="1058px" height="460px">
-	  	<img src="https://sites.google.com/site/astest0000001/test/HangshowBg.jpg?attredirects=0&d=1"  alt=""/>
-	  	<div id="sorry-message" class="btn-group" style="visibility=hidden">
-	  		<button id="textHelp" type="button" class="btn btn-default">Sorry. This page is under construction</button>
+	  	<div id="bg-image-div" class="bg-image">
+			<img src="https://sites.google.com/site/astest0000001/test/HangshowBgS.jpg?attredirects=0&d=1"  alt=""/>	  		
+		</div>
+	  	<div id="sorry_message" class="btn-group" style="visibility=hidden">
+	  		<button id="bt_sorry" type="button" class="btn btn-default">Sorry. This page is under construction</button>
+	  		<button id="bt_list" type="button" class="btn btn-default">Get List</button>
+	  		<button id="bt_link" type="button" class="btn btn-default">Link Test</button>
 <!-- 	  		<button type="button" class="btn btn-default">Middle</button>
 	  		<button type="button" class="btn btn-default">Right</button>
 -->	  	</div>
@@ -97,8 +102,12 @@
 	  	  </div> -->
 	  	</div>
 	  	<script type="text/javascript">
+	  		//var SEND_URL = "http://183.111.25.79/onair/insert";
+	  		var SEND_URL = "http://localhost/onair/insert";
+	  		var LIST_URL = "http://localhost/onair/list";
+	  		var ONAIR_URL = "https://plus.google.com/hangouts";
 			var SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=hangshow-test&description=this-is-hangshow-test&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";	 
-			var topic = ""; 	
+			var topic = "";
 			var youtubeId;
 			var userId;
 			var tags="test";
@@ -120,9 +129,9 @@
 					if(gapi.hangout.onair.isOnAirHangout()){
 
 						youtubeId = gapi.hangout.onair.getYouTubeLiveId();
-						$("#sorry-message").html("OnAir Mode!")
-						$("#sorry-message").css("visibility","visible");
-						$("#sorry-message").click(function(){
+						$("#sorry_message").html("OnAir Mode!")
+						$("#sorry_message").css("visibility","visible");
+						$("#bt_sorry").click(function(){
 							canvas.setVisible(true);
 							$.get(SAMPLE_INSERT_URI,function(data,status){
 								alert("Data: " + data + "\nStatus: " + status);
@@ -131,25 +140,72 @@
 
 					}
 					else{
-						$("#sorry-message").css("visibility","visible");
-						$("#sorry-message").click(function(){
-							$.get(SAMPLE_INSERT_URI,function(){
-								alert("Sent");
-							})  
-							.done(function() {
-								alert( "second success" );
-							})
-							.fail(function() {
-								alert( "error" );
-							})
-							.always(function() {
-								alert( "finished" );
-							});			  			  
+						$("#sorry_message").css("visibility","visible");
+						$("#bt_sorry").click(function(){
+							var data = {};
+							data.youtubecontentid = "youtube-id";
+							data.title = topic;
+							data.description = topic;
+							data.tags = "devfest2013";
+							data.timestart = "11:00:00";
+							sendDataGet(data,SEND_URL);
+						});
+						$("#bt_link").click(function(){
+							var url="http://naver.com";
+							window.open(ONAIR_URL);
+							// window.location.href = url;
+							// alert("click");
+							// document.location.href=url;
+						});
+						$("#bt_list").click(function(){
+							var data = {};
+							data = sendDataGet(data,LIST_URL);
+							console.log(data);
 						});
 					}
 
 			    });
 			}
+
+
+			function sendDataGet(input,url)
+			{
+			    // $.ajaxPrefilter('json', function(options, orig, jqXHR) {
+			    //     return 'jsonp';
+			    // });
+				var ret = "{}";
+			    url = url + "?" + decodeURIComponent( $.param( input ) );
+				$.get(url,function(){
+					console.log("Sent");
+				})  
+				.done(function(data) {
+					console.log( "Success:");
+					console.log( data );
+					ret = data;
+				})
+				.fail(function(data) {
+					console.log( "Error:"+data );
+				})
+				return ret;
+
+
+
+			    // $.ajax({
+			    //     url: SEND_URL
+			    //     , crossDomain: true
+			    //     , dataType: "json"
+			    //     , type: 'GET'
+			    //     , data: data
+			    //     , success: function( data, textStatus, jqXHR )
+			    //     {
+			    //         alert("sccess : " + data.channel.item.length );
+			    //     }
+			    //     , error: function( jqXHR, textStatus, errorThrown )
+			    //     {
+			    //         alert( textStatus + ", " + errorThrown );
+			    //     }
+			    // });
+			}			
 
 // Add startup listener immediately.  If you need an
 // OAuth 2.0 access token, your startup will be different.

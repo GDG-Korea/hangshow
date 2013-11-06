@@ -3,8 +3,14 @@ import static spark.Spark.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
 
 import spark.*;
 
@@ -25,93 +31,102 @@ public class ServerMain {
     final static String SPREADSHEET_SHEET_MAIN = "Main";
     final static String SPREADSHEET_READY ="Ready";
     
-    final static String FIELD_YOUTUBE ="youtube-content-id";
+    final static String FIELD_YOUTUBE ="youtubecontentid";
     final static String FIELD_TITLE ="title";
     final static String FIELD_DESC ="description";
     final static String FIELD_TAGS ="tags";
-    final static String FIELD_OWNER ="owner-id";
-    final static String FIELD_CONFERENCE ="conference-name";
-    final static String FIELD_START ="time-start";
+    final static String FIELD_OWNER ="ownerid";
+    final static String FIELD_CONFERENCE ="conferencename";
+    final static String FIELD_START ="timestart";
     
-    final static String QEURYSTRING_YOUTUBE ="youtube-content-id";
+    final static String QEURYSTRING_YOUTUBE ="youtubecontentid";
     final static String QEURYSTRING_TITLE ="title";
     final static String QEURYSTRING_DESC ="description";
     final static String QEURYSTRING_TAGS ="tags";
-    final static String QEURYSTRING_OWNER ="owner-id";
-    final static String QEURYSTRING_CONFERENCE ="conference-name";
-    final static String QEURYSTRING_START ="time-start";
+    final static String QEURYSTRING_OWNER ="ownerid";
+    final static String QEURYSTRING_CONFERENCE ="conferencename";
+    final static String QEURYSTRING_START ="timestart";
     
     static SpreadsheetEntry _mainSheet = null;
     static SpreadsheetService _service = null;
     static WorksheetEntry _mainWorksheet = null;
     static ServerMain _mainServer = new ServerMain();
+    
+    
     final static String SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=행쇼테스트&description=행쇼테스트입니다&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";
 
-    public void printAllRows(WorksheetEntry worksheet) throws IOException, ServiceException{
-		// Fetch the list feed of the worksheet.
-		URL listFeedUrl = worksheet.getListFeedUrl();
-		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
 
-		System.out.print("\t" + "worksheet size:"
-				+ listFeed.getEntries().size() + "\n");
-
-		// Create a local representation of the new row.
-
-		// Iterate through each row, printing its cell values.
-		for (ListEntry row : listFeed.getEntries()) {
-			// Print the first column's cell value
-			// System.out.print("\t\t["+row.getTitle().getPlainText() +
-			// "]\t");
-			// Iterate over the remaining columns, and print each cell value
-
-			for (String tag : row.getCustomElements().getTags()) {
-				System.out.print("\t" + tag + ":"
-						+ row.getCustomElements().getValue(tag));
-			}
-			System.out.println();
-		}
-    }
-    
-    public void insertRow(Request req) throws IOException, ServiceException{
-		if(_mainWorksheet != null){
-			ListEntry row = new ListEntry();
-			row.getCustomElements().setValueLocal(FIELD_YOUTUBE, 	req.queryParams(FIELD_YOUTUBE));
-			row.getCustomElements().setValueLocal(FIELD_TITLE, 		req.queryParams(FIELD_TITLE));
-			row.getCustomElements().setValueLocal(FIELD_DESC, 		req.queryParams(FIELD_DESC));
-			row.getCustomElements().setValueLocal(FIELD_TAGS, 		req.queryParams(FIELD_TAGS));
-			row.getCustomElements().setValueLocal(FIELD_OWNER, 		req.queryParams(FIELD_OWNER));
-			row.getCustomElements().setValueLocal(FIELD_CONFERENCE, req.queryParams(FIELD_CONFERENCE));
-			row.getCustomElements().setValueLocal(FIELD_START, 		req.queryParams(FIELD_START));
-
-			URL listFeedUrl = _mainWorksheet.getListFeedUrl();
-			row = _service.insert(listFeedUrl, row);
-		}
-    }
-    
 	public static void main(String[] args) 	      
 			throws AuthenticationException, MalformedURLException, IOException, ServiceException {
 		
+		
+		String jsSample =   "{ \"name1\": \"50\", \"name2\": \"2\", \"name3\": \"3\"}";
+		
+		JSONObject jsonobj = (JSONObject)JSONValue.parse(jsSample);
+//		Iterator iter = jsonobj.keySet().iterator();
+//		while(iter.hasNext()){
+//		   String key = (String) iter.next();
+//		   Object value = jsonobj.get(key);
+//		   
+//			if(key.equals("name2"))			
+//				name2 = (String)value;
+//			else if(key.equals("name3"))   
+//				name3 = (String)value;
+//			else if(key.equals("name1"))   
+//				name1 = (String)value;
+//		}
+		System.out.println("name1:"+jsonobj.get("name1")+",name2:"+jsonobj.get("name2")+",name3:"+jsonobj.get("name3"));
 
 		
+		
+
+		setPort(80);
 		get(new Route("/onair/insert") {
 			@Override
-			public Object handle(Request request, Response response) {
-				response.type("text/xml");
-				
+			public Object handle(Request request, Response response){
+				response.header("Access-Control-Allow-Origin","*");
 				try {
+					System.out.println("/onair/insert - step1");
+					response.type("application/json");
+					System.out.println("/onair/insert - step2");
 					_mainServer.insertRow(request);
+					System.out.println("/onair/insert - step3");
+					
+					System.out.println("/onair/insert");
 					_mainServer.printAllRows(_mainServer._mainWorksheet);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					System.out.println(e.toString());
 				} catch (ServiceException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					System.out.println(e.toString());
 				}				
 				//return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<status>"+request.queryParams(FIELD_YOUTUBE)+"</status>";
-				return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<status>"+request.queryParams(FIELD_YOUTUBE)+"</status>";
+				return "{ \""+FIELD_YOUTUBE+"\" : \""+request.queryParams(FIELD_YOUTUBE)+"\"}";
 			}
 		});
+		
+		get(new Route("/onair/list") {
+			@Override
+			public Object handle(Request request, Response response){
+				response.header("Access-Control-Allow-Origin","*");
+				String jsRs = "{}";
+				try {
+					response.type("application/json");
+					jsRs = _mainServer.printAllJson(_mainServer._mainWorksheet); 
+				} catch (IOException e) {
+					e.printStackTrace();
+					System.out.println(e.toString());
+				} catch (ServiceException e) {
+					e.printStackTrace();
+					System.out.println(e.toString());
+				}				
+				return jsRs;
+			}
+		});
+		
 		
 		
 		System.out.println("Step 1: Login");
@@ -140,13 +155,13 @@ public class ServerMain {
 		System.out.println("Step 4: Select Main Sheet");
 		// TODO: Choose a spreadsheet more intelligently based on your
 		// app's needs.
-		if (_mainSheet != null) {
+		if (_mainSheet == null) {
 			System.out.println("Cannot find Main Sheet");
-		} else {
 			int idxSheet = 0;
 			_mainSheet = spreadsheets.get(idxSheet);
 			System.out.println(idxSheet + " of the sheet index -  title:"
 					+ _mainSheet.getTitle().getPlainText());
+		} else {
 		}
 
 		// Make a request to the API to fetch information about all
@@ -161,12 +176,18 @@ public class ServerMain {
 			int colCount = worksheet.getColCount();
 
 			// Print the fetched information to the screen for this worksheet.
-			System.out.println("\t" + title + "- rows:" + rowCount + " cols: "
-					+ colCount);
 			if (title.equals(SPREADSHEET_SHEET_MAIN)) {
 				_mainWorksheet = worksheet;
+				System.out.println("\t[Main WorkSheet]: " + title + " -  rows:" + rowCount + " cols: "
+						+ colCount);
+			}
+			else{
+				System.out.println("\t[Sub WorkSheet]: " + title + " -  rows:" + rowCount + " cols: "
+						+ colCount);
 			}
 		}
+		
+		_mainServer.printAllRows(_mainWorksheet);
 		
 	    
 /*	    // Create a local representation of the new worksheet.
@@ -244,7 +265,7 @@ public class ServerMain {
 			}
 		});
 		
-		System.out.println("!!!!TEST!!!!");
+		System.out.println("!!!!START!!!!");
 
 	}
 	
@@ -295,6 +316,88 @@ public class ServerMain {
 		return true;
 	}
 */	
+    public void printAllRows(WorksheetEntry worksheet) throws IOException, ServiceException{
+		// Fetch the list feed of the worksheet.
+		URL listFeedUrl = worksheet.getListFeedUrl();
+		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
 
+		System.out.print("\t" + "worksheet size:"
+				+ listFeed.getEntries().size() + "\n");
+
+		// Create a local representation of the new row.
+
+		// Iterate through each row, printing its cell values.
+		for (ListEntry row : listFeed.getEntries()) {
+			// Print the first column's cell value
+			// System.out.print("\t\t["+row.getTitle().getPlainText() +
+			// "]\t");
+			// Iterate over the remaining columns, and print each cell value
+
+			for (String tag : row.getCustomElements().getTags()) {
+				System.out.print("\t" + tag + ":"
+						+ row.getCustomElements().getValue(tag));
+			}
+			System.out.println();
+		}
+    }
+    
+    public String printAllJson(WorksheetEntry worksheet) throws IOException, ServiceException{
+		URL listFeedUrl = worksheet.getListFeedUrl();
+		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
+		
+		JSONArray jsList = new JSONArray();
+		
+		System.out.print("[printAllJson] " + "worksheet size:"
+				+ listFeed.getEntries().size() + "\n");
+
+		String jsResult = ""; 
+		for (ListEntry row : listFeed.getEntries()) {
+			JSONObject jsObj = new JSONObject();
+			for (String tag : row.getCustomElements().getTags()) {
+				jsObj.put(tag,row.getCustomElements().getValue(tag));
+			}
+			jsList.add(jsObj);
+		}
+		jsResult = jsList.toJSONString();
+		System.out.println("Json:"+jsResult);
+		return jsResult;
+    }
+    
+    
+    public String checkValid(Object obj){
+    	if(obj instanceof String){
+    		return (String) obj;
+    	}
+    	return new String("");
+    }
+    
+    public void insertRow(Request req) throws IOException, ServiceException{
+		System.out.println("/onair/insert - step4-1 _mainWorksheet:"+_mainWorksheet);
+		if(_mainWorksheet != null){
+			System.out.println("/onair/insert - step4-2");
+			ListEntry row = new ListEntry();
+			row.getCustomElements().setValueLocal(FIELD_YOUTUBE, 		checkValid(req.queryParams(FIELD_YOUTUBE)));
+			row.getCustomElements().setValueLocal(FIELD_TITLE, 			checkValid(req.queryParams(FIELD_TITLE)));
+			row.getCustomElements().setValueLocal(FIELD_DESC, 			checkValid(req.queryParams(FIELD_DESC)));
+			row.getCustomElements().setValueLocal(FIELD_TAGS, 			checkValid(req.queryParams(FIELD_TAGS)));
+			row.getCustomElements().setValueLocal(FIELD_OWNER, 			checkValid(req.queryParams(FIELD_OWNER)));
+			row.getCustomElements().setValueLocal(FIELD_CONFERENCE, 	checkValid(req.queryParams(FIELD_CONFERENCE)));
+			row.getCustomElements().setValueLocal(FIELD_START, 			checkValid(req.queryParams(FIELD_START)));
+//			row.getCustomElements().setValueLocal(FIELD_YOUTUBE, 	"insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_TITLE, 		"insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_DESC, 		"insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_TAGS, 		"insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_OWNER, 		"insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_CONFERENCE, "insertRow-test");
+//			row.getCustomElements().setValueLocal(FIELD_START, 		"insertRow-test");
+			System.out.println("/onair/insert - step4-3");
+
+			URL listFeedUrl = _mainWorksheet.getListFeedUrl();
+			System.out.println("/onair/insert - step5");
+			row = _service.insert(listFeedUrl, row);
+			System.out.println("/onair/insert - step6");
+		}
+    }
+    
 	
 }
