@@ -1,6 +1,9 @@
 import static spark.Spark.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
@@ -14,6 +17,10 @@ import org.json.simple.parser.JSONParser;
 
 import spark.*;
 
+import com.google.android.gcm.server.Constants;
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.Result;
+import com.google.android.gcm.server.Sender;
 import com.google.gdata.client.authn.oauth.*;
 import com.google.gdata.client.spreadsheet.*;
 import com.google.gdata.data.*;
@@ -39,6 +46,9 @@ public class ServerMain {
     final static String FIELD_CONFERENCE ="conferencename";
     final static String FIELD_START ="timestart";
     
+    final static String FIELD_REGID ="regid";
+    final static String FIELD_USERID ="userid";
+
     final static String QEURYSTRING_YOUTUBE ="youtubecontentid";
     final static String QEURYSTRING_TITLE ="title";
     final static String QEURYSTRING_DESC ="description";
@@ -46,6 +56,9 @@ public class ServerMain {
     final static String QEURYSTRING_OWNER ="ownerid";
     final static String QEURYSTRING_CONFERENCE ="conferencename";
     final static String QEURYSTRING_START ="timestart";
+    
+    final static String GCM_API_KEY = "AIzaSyAcsMfsSRZIf4EA-UxPQhvBiyYjDO1Cvgs";
+    final static String GCM_REG_ID = "APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA";
     
     static SpreadsheetEntry _mainSheet = null;
     static SpreadsheetService _service = null;
@@ -55,30 +68,64 @@ public class ServerMain {
     
     final static String SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=행쇼테스트&description=행쇼테스트입니다&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";
 
+    
+    public String getHTML(String urlToRead) {
+        URL url;
+        HttpURLConnection conn;
+        BufferedReader rd;
+        String line;
+        String result = "";
+        try {
+           url = new URL(urlToRead);
+           conn = (HttpURLConnection) url.openConnection();
+           conn.setRequestMethod("GET");
+           rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+           while ((line = rd.readLine()) != null) {
+              result += line;
+           }
+           rd.close();
+        } catch (Exception e) {
+           e.printStackTrace();
+           System.out.println("getHTML error:"+e.toString());
+        }
+        return result;
+     }
+    
+    public void sendGCM() throws IOException{
+	   Sender sender = new Sender(GCM_API_KEY);  //구글 코드에서 발급받은 서버 키
+	   Message msg = new Message.Builder()
+	       								.addData(FIELD_YOUTUBE, "EfDfdyBldz0")  //데이터 추가
+	       								.addData(FIELD_TITLE, "HangShow Team JJang!!!")  //데이터 추가
+	       								.build();
+	
+	   //푸시 전송. 파라미터는 푸시 내용, 보낼 단말의 id, 마지막은 잘 모르겠음 
+	   Result result = sender.send(msg, GCM_REG_ID, 5);
+	   
+	   System.out.println("getHTML:"+getHTML("http://183.111.25.79/onair/list"));
+	
+	   //결과 처리
+	   if(result.getMessageId() != null) {
+	      System.out.println("Push Seuccess!");
+	   }
+	   else {
+	      String error = result.getErrorCodeName();   //에러 내용 받기
+	      System.out.println("Error:"+error);
+	  //에러 처리
+		  if(Constants.ERROR_INTERNAL_SERVER_ERROR.equals(error)) {
+		     //구글 푸시 서버 에러
+		  }
+		  else{}
+		  }
+    }
 
 	public static void main(String[] args) 	      
 			throws AuthenticationException, MalformedURLException, IOException, ServiceException {
+		_mainServer.sendGCM();
 		
-		
-		String jsSample =   "{ \"name1\": \"50\", \"name2\": \"2\", \"name3\": \"3\"}";
-		
+/*		String jsSample =   "{ \"name1\": \"50\", \"name2\": \"2\", \"name3\": \"3\"}";
 		JSONObject jsonobj = (JSONObject)JSONValue.parse(jsSample);
-//		Iterator iter = jsonobj.keySet().iterator();
-//		while(iter.hasNext()){
-//		   String key = (String) iter.next();
-//		   Object value = jsonobj.get(key);
-//		   
-//			if(key.equals("name2"))			
-//				name2 = (String)value;
-//			else if(key.equals("name3"))   
-//				name3 = (String)value;
-//			else if(key.equals("name1"))   
-//				name1 = (String)value;
-//		}
 		System.out.println("name1:"+jsonobj.get("name1")+",name2:"+jsonobj.get("name2")+",name3:"+jsonobj.get("name3"));
-
-		
-		
+*/
 
 		setPort(80);
 		get(new Route("/onair/insert") {
@@ -108,6 +155,25 @@ public class ServerMain {
 			}
 		});
 		
+		get(new Route("/onair/regid") {
+			@Override
+			public Object handle(Request request, Response response){
+				response.header("Access-Control-Allow-Origin","*");
+				String jsRs = "{\"status\":\"success\"}";
+				try {
+					response.type("application/json");
+					jsRs = _mainServer.printAllJson(_mainServer._mainWorksheet); 
+				} catch (IOException e) {
+					e.printStackTrace();
+					System.out.println(e.toString());
+				} catch (ServiceException e) {
+					e.printStackTrace();
+					System.out.println(e.toString());
+				}				
+				return jsRs;
+			}
+		});
+		
 		get(new Route("/onair/list") {
 			@Override
 			public Object handle(Request request, Response response){
@@ -126,8 +192,6 @@ public class ServerMain {
 				return jsRs;
 			}
 		});
-		
-		
 		
 		System.out.println("Step 1: Login");
 		_service = new SpreadsheetService("MySpreadsheetIntegration-v1");
