@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+body {
+	background-color: #181818;
+	width: 1024px; height: 640px;
+	margin : 0px; padding: 0px;
+               visibility: hidden;
+}
+
+#share{
+
+	position: fixed;
+                max-width: 160px;	
+	height: auto;
+	left: 0px; top: 130px;
+}
+
+
+#monitor{
+    position: fixed;
+    width: 495px;
+    height: auto;
+    left: 300px; top: 80px;
+    margin-top: 0%;
+    margin-left:0%;
+}
+
+#onair{
+	position: fixed;
+    width: 196px;
+    height: auto;
+    bottom: 0px; left : 9px;
+}
+
+#setting {
+	position: fixed;
+    width: 191px;
+    height: auto;
+    right: 20px; top : 140px;
+    visibility: hidden;
+	
+}
+
+#youtube {
+	position: fixed;
+    width: 335px;
+    height: auto;
+    right: 20px; bottom : 20px;
+	
+}
+
+#hangshow {
+	position: fixed;
+    width: 151px;
+    height: auto;
+    left: 235px; bottom : 53px;
+}
+
+#orgin{
+	border: 1px solid white;
+	opacity: 0.4;
+}
+

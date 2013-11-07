@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="HangShow">
+		<meta name="author" content="gdg-devteam@googlegroups.com">
+		<link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+		<title> HangShow </title>
+		<style type="text/css"> </style>
+		<script type="text/javascript"> </script>
+
+		<script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
+		<!--<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.4"></script> -->
+		<script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+	
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="https://sites.google.com/site/astest0000001/test/style.css?attredirects=0&d=1" />
+		<style type="text/css">
+/*			html {height:100%;}
+			body {height:100%; background-color:#181818; margin:0; padding:0;}
+			#bg {position:absolute; top:0; left:0; width:100%; height:100%;}
+			#hams {position: relative; top: 0}
+			#bg-image-div {visibility: hidden}
+*/		</style>		
+	</head>
+
+	<body>
+
+		<img id="share" src="https://sites.google.com/site/astest0000001/test/pc_share.png?attredirects=0&d=1">
+		<img id="monitor" src="https://sites.google.com/site/astest0000001/test/monitor_off.png?attredirects=0&d=1"> 
+		<img id="onair" src="https://sites.google.com/site/astest0000001/test/open_casting.png?attredirects=0&d=1" >
+		<img id="setting" src="https://sites.google.com/site/astest0000001/test/Settings.png?attredirects=0&d=1">
+		<img id="youtube" src="https://sites.google.com/site/astest0000001/test/YouTube%20Frame.png?attredirects=0&d=1">
+		<img id="hangshow" src="https://sites.google.com/site/astest0000001/test/Hangshow%20Title.png?attredirects=0&d=1">
+
+	 	<script src="//code.jquery.com/jquery.js"></script>
+		<!--<script src="https://sites.google.com/site/astest0000001/test/script.js?attredirects=0&d=1"></script> -->
+
+	  	<div id="sorry_message" class="btn-group" style="visibility=hidden">
+	  		<button id="bt_sorry" type="button" class="btn btn-default">Sorry. This page is under construction</button>
+	  		<button id="bt_list" type="button" class="btn btn-default">Get List</button>
+	  		<button id="bt_link" type="button" class="btn btn-default">Link Test</button>
+<!-- 	  		<button type="button" class="btn btn-default">Middle</button>
+	  		<button type="button" class="btn btn-default">Right</button>
+-->	  	</div>
+		
+	  	<script type="text/javascript">
+			//var SEND_URL = "http://183.111.25.79/onair/insert";
+			var SEND_URL = "http://localhost/onair/insert";
+			var LIST_URL = "http://localhost/onair/list";
+			var ONAIR_URL = "https://plus.google.com/hangouts";
+			var SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=hangshow-test&description=this-is-hangshow-test&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";	 
+			var topic = "";
+			var youtubeId;
+			var userId;
+			var tags="test";
+			function init() {
+
+				  // When API is ready...
+				gapi.hangout.onApiReady.add(
+					function(eventObj) {
+						var id = gapi.hangout.getLocalParticipantId();
+						console.log("id:"+id);
+						var feed = gapi.hangout.layout.getDefaultVideoFeed();
+						var canvas = gapi.hangout.layout.getVideoCanvas();
+						canvas.setVideoFeed(feed);
+						canvas.setWidth(491);
+						canvas.setPosition(280 , 40);
+						console.log("onApiReady");
+
+						topic = gapi.hangout.getTopic();
+						userId = gapi.hangout.getParticipantId();
+						if(gapi.hangout.onair.isOnAirHangout()){
+
+							youtubeId = gapi.hangout.onair.getYouTubeLiveId();
+							$("#sorry_message").html("OnAir Mode!")
+							$("#sorry_message").css("visibility","visible");
+							$("#bt_sorry").click(function(){
+								canvas.setVisible(true);
+								$.get(SAMPLE_INSERT_URI,function(data,status){
+									alert("Data: " + data + "\nStatus: " + status);
+								});			  			  
+							});
+
+						}
+						else{
+							$("#sorry_message").css("visibility","visible");
+							$("#bt_sorry").click(function(){
+								var data = {};
+								data.youtubecontentid = "youtube-id";
+								data.title = topic;
+								data.description = topic;
+								data.tags = "devfest2013";
+								data.timestart = "11:00:00";
+								sendDataGet(data,SEND_URL);
+							});
+							$("#bt_link").click(function(){
+								var url="http://naver.com";
+								window.open(ONAIR_URL);
+								// window.location.href = url;
+								// alert("click");
+								// document.location.href=url;
+							});
+							$("#bt_list").click(function(){
+								var data = {};
+								data = sendDataGet(data,LIST_URL);
+								console.log(data);
+							});
+						}
+
+				    });
+				}
+
+
+				function sendDataGet(input,url)
+				{
+				    // $.ajaxPrefilter('json', function(options, orig, jqXHR) {
+				    //     return 'jsonp';
+				    // });
+					var ret = "{}";
+				    url = url + "?" + decodeURIComponent( $.param( input ) );
+					$.get(url,function(){
+						console.log("Sent");
+					})  
+					.done(function(data) {
+						console.log( "Success:");
+						console.log( data );
+						ret = data;
+					})
+					.fail(function(data) {
+						console.log( "Error:"+data );
+					})
+					return ret;
+
+
+
+			    // $.ajax({
+			    //     url: SEND_URL
+			    //     , crossDomain: true
+			    //     , dataType: "json"
+			    //     , type: 'GET'
+			    //     , data: data
+			    //     , success: function( data, textStatus, jqXHR )
+			    //     {
+			    //         alert("sccess : " + data.channel.item.length );
+			    //     }
+			    //     , error: function( jqXHR, textStatus, errorThrown )
+			    //     {
+			    //         alert( textStatus + ", " + errorThrown );
+			    //     }
+			    // });
+			}			
+
+			// Add startup listener immediately.  If you need an
+			// OAuth 2.0 access token, your startup will be different.
+			init();	
+
+	  	</script>
+
+
+	</body>
+</html>
