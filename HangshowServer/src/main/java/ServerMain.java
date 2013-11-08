@@ -7,10 +7,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -22,6 +24,7 @@ import spark.*;
 
 import com.google.android.gcm.server.Constants;
 import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.MulticastResult;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
 import com.google.gdata.client.authn.oauth.*;
@@ -69,234 +72,22 @@ public class ServerMain {
 	static WorksheetEntry _mainWorkSheet = null;
 	static WorksheetEntry _regIdSheet = null;
 	static ServerMain _mainServer = new ServerMain();
-	static Logger _log = LoggerFactory.getLogger(ServerMain.class);
+//	static Logger _log = LoggerFactory.getLogger(ServerMain.class);
+	static Logger _log = null;
 
 	final static String SAMPLE_INSERT_URI = "http://localhost:4567/onair/insert?youtube-content-id=1111&title=행쇼테스트&description=행쇼테스트입니다&tags=test&owner-id=11111&conference-name=devfest2013&time-start=10:00:00";
 
-	static void log(String str) {
+//	static void _log.info(String str) {
 //		_log.info(str);
-		_log.info("{}",str);
-//		_log.trace(str);
-//		System.out.println(str);
-	}
-
-	public void loadConf() {
-		try {
-			Properties p = new Properties();
-
-			// ini 파일 읽기
-			p.load(new FileInputStream("./conf/conf.ini"));
-
-			// Key 값 읽기
-			_USERNAME = p.getProperty("google-id").trim();
-			_PASSWORD = p.getProperty("password").trim();
-
-			p.list(System.out);
-
-			// ini 파일 쓰기
-			// p.store( new FileOutputStream("conf.ini"), "done.");
-		} catch (Exception e) {
-			log(e.toString());
-		}
-	}
-
-	public String getHTML(String urlToRead) {
-		URL url;
-		HttpURLConnection conn;
-		BufferedReader rd;
-		String line;
-		String result = "";
-		try {
-			url = new URL(urlToRead);
-			conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			rd = new BufferedReader(	new InputStreamReader(conn.getInputStream()));
-			while ((line = rd.readLine()) != null) {
-				result += line;
-			}
-			rd.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			log("getHTML error:" + e.toString());
-		}
-		return result;
-	}
-
-	public void sendGCM(Request request) throws IOException {
-		Sender sender = new Sender(GCM_API_KEY); // 구글 코드에서 발급받은 서버 키
-		Message msg = new Message.Builder()
-				.addData(FIELD_MAIN_YOUTUBE, request.queryParams(FIELD_MAIN_YOUTUBE)) // 데이터 추가
-				.addData(FIELD_MAIN_TITLE, request.queryParams(FIELD_MAIN_TITLE)) // 데이터 추가
-				.build();
-
-		// 푸시 전송. 파라미터는 푸시 내용, 보낼 단말의 id, 마지막은 잘 모르겠음
-		Result result = sender.send(msg, GCM_REG_ID, 5);
-
-		log("getHTML:"
-				+ getHTML("http://183.111.25.79/onair/list"));
-
-		// 결과 처리
-		if (result.getMessageId() != null) {
-			log("Push Seuccess!");
-		} else {
-			String error = result.getErrorCodeName(); // 에러 내용 받기
-			log("Error:" + error);
-			if (Constants.ERROR_INTERNAL_SERVER_ERROR.equals(error)) {
-				// 구글 푸시 서버 에러
-			} else {
-			}
-		}
-	}
-
-	public void init() throws IOException, ServiceException {
-		log("Step 0: load conf");
-		_mainServer.loadConf();
-
-		log("Step 1: Login");
-		_service = new SpreadsheetService("MySpreadsheetIntegration-v1");
-		_service.setUserCredentials(_USERNAME, _PASSWORD);
-		_service.setProtocolVersion(SpreadsheetService.Versions.V3);
-
-		URL SPREADSHEET_FEED_URL = new URL(
-				"https://spreadsheets.google.com/feeds/spreadsheets/private/full");
-
-		log("Step 2: SpreadSheet Entries");
-		SpreadsheetFeed feed = _service.getFeed(SPREADSHEET_FEED_URL,
-				SpreadsheetFeed.class);
-		List<SpreadsheetEntry> spreadsheets = feed.getEntries();
-
-		log("Step 3: Show SpreadSheet's Name");
-		// Iterate through all of the spreadsheets returned
-		for (SpreadsheetEntry spreadsheet : spreadsheets) {
-			// Print the title of this spreadsheet to the screen
-			log(spreadsheet.getTitle().getPlainText());
-			if (spreadsheet.getTitle().getPlainText().equals(SPREADSHEET_NAME)) {
-				_mainSpreadSheet = spreadsheet;
-			}
-		}
-
-		log("Step 4: Select Main Sheet");
-		// app's needs.
-		if (_mainSpreadSheet == null) {
-			log("Cannot find Main Sheet");
-			int idxSheet = 0;
-			_mainSpreadSheet = spreadsheets.get(idxSheet);
-			log(idxSheet + " of the sheet index -  title:"
-					+ _mainSpreadSheet.getTitle().getPlainText());
-		} else {
-		}
-
-		// Make a request to the API to fetch information about all
-		// worksheets in the spreadsheet.
-		List<WorksheetEntry> worksheets = _mainSpreadSheet.getWorksheets();
-
-		// Iterate through each worksheet in the spreadsheet.
-		for (WorksheetEntry worksheet : worksheets) {
-			// Get the worksheet's title, row count, and column count.
-			String title = worksheet.getTitle().getPlainText();
-			int rowCount = worksheet.getRowCount();
-			int colCount = worksheet.getColCount();
-
-			// Print the fetched information to the screen for this worksheet.
-			if (title.equals(SPREADSHEET_SHEET_MAIN)) {
-				_mainWorkSheet = worksheet;
-				log("\t[Main WorkSheet]: " + title + " -  rows:"
-						+ rowCount + " cols: " + colCount);
-			} else if (title.equals(SPREADSHEET_SHEET_REGID)) {
-				_regIdSheet = worksheet;
-				log("\t[RegId WorkSheet]: " + title
-						+ " -  rows:" + rowCount + " cols: " + colCount);
-
-			} else {
-				log("\t[Sub WorkSheet]: " + title + " -  rows:"
-						+ rowCount + " cols: " + colCount);
-			}
-		}
-
-		_mainServer.printAllRows(_mainWorkSheet);
-		_mainServer.printAllRows(_regIdSheet);
-	}
-
-	void initSpart() {
-		setPort(80);
-		get(new Route("/onair/insert") {
-			@Override
-			public Object handle(Request request, Response response) {
-				log("GET "+request.url()+",Query:"+request.queryString());
-				response.header("Access-Control-Allow-Origin", "*");
-				response.type("application/json");
-				try {
-					if (checkValid(request.queryParams(FIELD_MAIN_YOUTUBE))
-							.equals("")) {
-						return "{\"status\":\"NOT_EXIST_YOUTUBEID\"}";
-					}
-					_mainServer.insertMainRow(request);
-					_mainServer.printAllRows(_mainServer._mainWorkSheet);
-					sendGCM(request);					
-				} catch (IOException e) {
-					e.printStackTrace();
-					log(e.toString());
-				} catch (ServiceException e) {
-					e.printStackTrace();
-					log(e.toString());
-				}
-				return "{ \"" + FIELD_MAIN_YOUTUBE + "\" : \""
-						+ request.queryParams(FIELD_MAIN_YOUTUBE) + "\"}";
-			}
-		});
-
-		get(new Route("/onair/regid") {
-			@Override
-			public Object handle(Request request, Response response) {
-				log("GET "+request.url()+",Query:"+request.queryString());
-				response.header("Access-Control-Allow-Origin", "*");
-				response.type("application/json");
-				String jsRs = "{\"status\":\"success\"}";
-
-				try {
-					if (checkValid(request.queryParams(FIELD_REGID_REGID))
-							.equals("")) {
-						jsRs = "{\"status\":\"NOT_EXIST_REGID\"}";
-						return jsRs;
-					}
-					insertRegIdRow(request);
-					_mainServer.printAllRows(_mainServer._regIdSheet);
-				} catch (IOException e) {
-					e.printStackTrace();
-					log(e.toString());
-				} catch (ServiceException e) {
-					e.printStackTrace();
-					log(e.toString());
-				}
-				return jsRs;
-			}
-		});
-
-		get(new Route("/onair/list") {
-			@Override
-			public Object handle(Request request, Response response) {
-				log("GET "+request.url()+",Query:"+request.queryString());
-				response.header("Access-Control-Allow-Origin", "*");
-				response.type("application/json");
-				String jsRs = "{}";
-				try {
-					jsRs = _mainServer.printAllJson(_mainServer._mainWorkSheet);
-				} catch (IOException e) {
-					e.printStackTrace();
-					log(e.toString());
-				} catch (ServiceException e) {
-					e.printStackTrace();
-					log(e.toString());
-				}
-				return jsRs;
-			}
-		});
-
-	}
+//	}
 
 	public static void main(String[] args) throws AuthenticationException,
 			MalformedURLException, IOException, ServiceException {
 
+		
+		DOMConfigurator.configure("./conf/log4j.xml");
+		_log = LoggerFactory.getLogger(ServerMain.class);
+		
 		/*
 		 * String jsSample =
 		 * "{ \"name1\": \"50\", \"name2\": \"2\", \"name3\": \"3\"}";
@@ -371,7 +162,7 @@ public class ServerMain {
 		 * return "root"; } });
 		 */
 
-		log("!!!!START!!!!");
+		_log.info("!!!!START!!!!");
 
 	}
 
@@ -412,7 +203,7 @@ public class ServerMain {
 		URL listFeedUrl = worksheet.getListFeedUrl();
 		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
 
-		log("\t[" + worksheet.getTitle().getPlainText()
+		_log.info("\t[" + worksheet.getTitle().getPlainText()
 				+ "] worksheet size:" + listFeed.getEntries().size() + "\n");
 
 		// Create a local representation of the new row.
@@ -421,14 +212,14 @@ public class ServerMain {
 		// Iterate through each row, printing its cell values.
 		for (ListEntry row : listFeed.getEntries()) {
 			// Print the first column's cell value
-			// log("\t\t["+row.getTitle().getPlainText() +
+			// _log.info("\t\t["+row.getTitle().getPlainText() +
 			// "]\t");
 			// Iterate over the remaining columns, and print each cell value
 			strLog = "";
 			for (String tag : row.getCustomElements().getTags()) {
 				strLog += "\t" + tag + ": "+ row.getCustomElements().getValue(tag);
 			}
-			log(strLog);
+			_log.info(strLog);
 		}
 	}
 
@@ -439,7 +230,7 @@ public class ServerMain {
 
 		JSONArray jsList = new JSONArray();
 
-		log("[printAllJson] " + "worksheet size:"
+		_log.info("[printAllJson] " + "worksheet size:"
 				+ listFeed.getEntries().size() + "\n");
 
 		String jsResult = "";
@@ -451,7 +242,7 @@ public class ServerMain {
 			jsList.add(jsObj);
 		}
 		jsResult = jsList.toJSONString();
-		log("Json:" + jsResult);
+		_log.info("Json:" + jsResult);
 		return jsResult;
 	}
 
@@ -475,8 +266,8 @@ public class ServerMain {
 			row = _service.insert(listFeedUrl, row);
 		} catch (Exception e) {
 			e.printStackTrace();
-			log("insertRegIdRow error:" + e.toString());
-			log("Error: _RegIdSheet");
+			_log.info("insertRegIdRow error:" + e.toString());
+			_log.info("Error: _RegIdSheet");
 		}
 	}
 
@@ -503,9 +294,248 @@ public class ServerMain {
 			row = _service.insert(listFeedUrl, row);
 		} catch (Exception e) {
 			e.printStackTrace();
-			log("insertMainRow error:" + e.toString());
-			log("Error: _mainWorkSheet");
+			_log.info("insertMainRow error:" + e.toString());
+			_log.info("Error: _mainWorkSheet");
 		}
+	}
+
+	public void loadConf() {
+		try {
+			Properties p = new Properties();
+
+			// ini 파일 읽기
+			p.load(new FileInputStream("./conf/conf.ini"));
+
+			// Key 값 읽기
+			_USERNAME = p.getProperty("google-id").trim();
+			_PASSWORD = p.getProperty("password").trim();
+
+			_log.info(p.toString());
+			//p.list(System.out);
+
+			// ini 파일 쓰기
+			// p.store( new FileOutputStream("conf.ini"), "done.");
+		} catch (Exception e) {
+			_log.info(e.toString());
+		}
+	}
+
+	public String getHTML(String urlToRead) {
+		URL url;
+		HttpURLConnection conn;
+		BufferedReader rd;
+		String line;
+		String result = "";
+		try {
+			url = new URL(urlToRead);
+			conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			rd = new BufferedReader(	new InputStreamReader(conn.getInputStream()));
+			while ((line = rd.readLine()) != null) {
+				result += line;
+			}
+			rd.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			_log.info("getHTML error:" + e.toString());
+		}
+		return result;
+	}
+
+	public List<String> getRegidList() throws IOException, ServiceException{
+		ArrayList<String> regidlist = new ArrayList<String>(); 
+		WorksheetEntry worksheet = _regIdSheet;
+		URL listFeedUrl = worksheet.getListFeedUrl();
+		ListFeed listFeed = _service.getFeed(listFeedUrl, ListFeed.class);
+
+		for (ListEntry row : listFeed.getEntries()) {
+			for (String tag : row.getCustomElements().getTags()) {
+				if(tag.equals(FIELD_REGID_REGID))
+					regidlist.add(row.getCustomElements().getValue(tag));
+			}
+		}
+		
+		return regidlist;
+	}
+	
+	
+	public void sendGCM(Request request) throws IOException, ServiceException {
+		Sender sender = new Sender(GCM_API_KEY); // 구글 코드에서 발급받은 서버 키
+		Message msg = new Message.Builder()
+				.addData(FIELD_MAIN_YOUTUBE, request.queryParams(FIELD_MAIN_YOUTUBE)) // 데이터 추가
+				.addData(FIELD_MAIN_TITLE, request.queryParams(FIELD_MAIN_TITLE)) // 데이터 추가
+				.build();
+
+		// 푸시 전송. 파라미터는 푸시 내용, 보낼 단말의 id, 마지막은 잘 모르겠음
+
+		MulticastResult results = sender.send(msg, getRegidList(), 5);
+
+		_log.info("getHTML:"  + getHTML("http://183.111.25.79/onair/list"));
+
+		// 결과 처리
+		for(Result result : results.getResults()){
+			if (result.getMessageId() != null) {
+				String regid = result.getCanonicalRegistrationId();
+				_log.info("\tSuccess: regid - " + regid);
+			} else {
+				String regid = result.getCanonicalRegistrationId();
+				String error = result.getErrorCodeName(); // 에러 내용 받기
+				_log.info("\tError: regid - " + regid+", error - "+error);
+				if (Constants.ERROR_INTERNAL_SERVER_ERROR.equals(error)) {
+					// 구글 푸시 서버 에러
+				} else {
+				}
+			}
+		}
+		
+	}
+
+	
+	
+	public void init() throws IOException, ServiceException {
+		_log.info("Step 0: load conf");
+		_mainServer.loadConf();
+
+		_log.info("Step 1: Login");
+		_service = new SpreadsheetService("MySpreadsheetIntegration-v1");
+		_service.setUserCredentials(_USERNAME, _PASSWORD);
+		_service.setProtocolVersion(SpreadsheetService.Versions.V3);
+
+		URL SPREADSHEET_FEED_URL = new URL(
+				"https://spreadsheets.google.com/feeds/spreadsheets/private/full");
+
+		_log.info("Step 2: SpreadSheet Entries");
+		SpreadsheetFeed feed = _service.getFeed(SPREADSHEET_FEED_URL,
+				SpreadsheetFeed.class);
+		List<SpreadsheetEntry> spreadsheets = feed.getEntries();
+
+		_log.info("Step 3: Show SpreadSheet's Name");
+		// Iterate through all of the spreadsheets returned
+		for (SpreadsheetEntry spreadsheet : spreadsheets) {
+			// Print the title of this spreadsheet to the screen
+			_log.info(spreadsheet.getTitle().getPlainText());
+			if (spreadsheet.getTitle().getPlainText().equals(SPREADSHEET_NAME)) {
+				_mainSpreadSheet = spreadsheet;
+			}
+		}
+
+		_log.info("Step 4: Select Main Sheet");
+		// app's needs.
+		if (_mainSpreadSheet == null) {
+			_log.info("Cannot find Main Sheet");
+			int idxSheet = 0;
+			_mainSpreadSheet = spreadsheets.get(idxSheet);
+			_log.info(idxSheet + " of the sheet index -  title:"
+					+ _mainSpreadSheet.getTitle().getPlainText());
+		} else {
+		}
+
+		// Make a request to the API to fetch information about all
+		// worksheets in the spreadsheet.
+		List<WorksheetEntry> worksheets = _mainSpreadSheet.getWorksheets();
+
+		// Iterate through each worksheet in the spreadsheet.
+		for (WorksheetEntry worksheet : worksheets) {
+			// Get the worksheet's title, row count, and column count.
+			String title = worksheet.getTitle().getPlainText();
+			int rowCount = worksheet.getRowCount();
+			int colCount = worksheet.getColCount();
+
+			// Print the fetched information to the screen for this worksheet.
+			if (title.equals(SPREADSHEET_SHEET_MAIN)) {
+				_mainWorkSheet = worksheet;
+				_log.info("\t[Main WorkSheet]: " + title + " -  rows:"
+						+ rowCount + " cols: " + colCount);
+			} else if (title.equals(SPREADSHEET_SHEET_REGID)) {
+				_regIdSheet = worksheet;
+				_log.info("\t[RegId WorkSheet]: " + title
+						+ " -  rows:" + rowCount + " cols: " + colCount);
+
+			} else {
+				_log.info("\t[Sub WorkSheet]: " + title + " -  rows:"
+						+ rowCount + " cols: " + colCount);
+			}
+		}
+
+		_mainServer.printAllRows(_mainWorkSheet);
+		_mainServer.printAllRows(_regIdSheet);
+	}
+
+	void initSpart() {
+		setPort(80);
+		get(new Route("/onair/insert") {
+			@Override
+			public Object handle(Request request, Response response) {
+				_log.info("GET "+request.url()+",Query:"+request.queryString());
+				response.header("Access-Control-Allow-Origin", "*");
+				response.type("application/json");
+				try {
+					if (checkValid(request.queryParams(FIELD_MAIN_YOUTUBE))
+							.equals("")) {
+						return "{\"status\":\"NOT_EXIST_YOUTUBEID\"}";
+					}
+					_mainServer.insertMainRow(request);
+					_mainServer.printAllRows(_mainServer._mainWorkSheet);
+					sendGCM(request);					
+				} catch (IOException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				} catch (ServiceException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				}
+				return "{ \"" + FIELD_MAIN_YOUTUBE + "\" : \""
+						+ request.queryParams(FIELD_MAIN_YOUTUBE) + "\"}";
+			}
+		});
+
+		get(new Route("/onair/regid") {
+			@Override
+			public Object handle(Request request, Response response) {
+				_log.info("GET "+request.url()+",Query:"+request.queryString());
+				response.header("Access-Control-Allow-Origin", "*");
+				response.type("application/json");
+				String jsRs = "{\"status\":\"success\"}";
+
+				try {
+					if (checkValid(request.queryParams(FIELD_REGID_REGID))
+							.equals("")) {
+						jsRs = "{\"status\":\"NOT_EXIST_REGID\"}";
+						return jsRs;
+					}
+					insertRegIdRow(request);
+					_mainServer.printAllRows(_mainServer._regIdSheet);
+				} catch (IOException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				} catch (ServiceException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				}
+				return jsRs;
+			}
+		});
+
+		get(new Route("/onair/list") {
+			@Override
+			public Object handle(Request request, Response response) {
+				_log.info("GET "+request.url()+",Query:"+request.queryString());
+				response.header("Access-Control-Allow-Origin", "*");
+				response.type("application/json");
+				String jsRs = "{}";
+				try {
+					jsRs = _mainServer.printAllJson(_mainServer._mainWorkSheet);
+				} catch (IOException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				} catch (ServiceException e) {
+					e.printStackTrace();
+					_log.info(e.toString());
+				}
+				return jsRs;
+			}
+		});
+
 	}
 
 }

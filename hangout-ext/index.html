@@ -20,6 +20,9 @@
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="https://sites.google.com/site/astest0000001/test/style.css?attredirects=0&d=1" />
 		<style type="text/css">
+			/*body {visibility: visible;}*/
+			#sorry_message{visibility: visible;}
+			#test_modal{visibility: visible;}
 /*			html {height:100%;}
 			body {height:100%; background-color:#181818; margin:0; padding:0;}
 			#bg {position:absolute; top:0; left:0; width:100%; height:100%;}
@@ -47,7 +50,19 @@
 <!-- 	  		<button type="button" class="btn btn-default">Middle</button>
 	  		<button type="button" class="btn btn-default">Right</button>
 -->	  	</div>
-		
+		<div class="modal fade" id="test_modal">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">&times;</a>
+				<h3>Modal Header</h3>
+				</div>
+			<div class="modal-body">
+				<p>Test Modal</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-primary">Save Changes</a>
+			</div>
+		</div>		
 	  	<script type="text/javascript">
 			//var SEND_URL = "http://183.111.25.79/onair/insert";
 			var SEND_URL = "http://localhost/onair/insert";
@@ -59,10 +74,11 @@
 			var userId;
 			var tags="test";
 			function init() {
-
 				  // When API is ready...
 				gapi.hangout.onApiReady.add(
 					function(eventObj) {
+
+
 						var id = gapi.hangout.getLocalParticipantId();
 						console.log("id:"+id);
 						var feed = gapi.hangout.layout.getDefaultVideoFeed();
@@ -106,6 +122,7 @@
 								// document.location.href=url;
 							});
 							$("#bt_list").click(function(){
+								 $('#test_modal').modal('show');
 								var data = {};
 								data = sendDataGet(data,LIST_URL);
 								console.log(data);
@@ -160,6 +177,8 @@
 			init();	
 
 	  	</script>
+	 	<script src="//code.jquery.com/jquery.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 
 	</body>

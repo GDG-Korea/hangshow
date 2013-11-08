@@ -1,0 +1,1449 @@
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Step 0: load conf
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Step 1: Login
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Hangshow-Feed
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :test-sheet
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :Step 4: Select Main Sheet
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	[Main] worksheet size:1
+
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오전 11:50:17
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	[RegIdList] worksheet size:29
+
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:49] DEBUG [RouteMatcherFactory(get:35)] :creates RouteMatcher
+
+[2013-11-08 11:49] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/insert, ServerMain$1@17e5e56
+
+[2013-11-08 11:49] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/regid, ServerMain$2@1636e34
+
+[2013-11-08 11:49] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/list, ServerMain$3@d81aaf
+
+[2013-11-08 11:49] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /hello, ServerMain$4@1ec6a9a
+
+[2013-11-08 11:49] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: post, /hello, ServerMain$5@1466e67
+
+[2013-11-08 11:49]  INFO [ServerMain(log:80)] :!!!!START!!!!
+
+[2013-11-08 11:49] DEBUG [Log(initialized:173)] :Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :spark.webserver.JettyHandler@1652035 added {org.eclipse.jetty.server.session.HashSessionManager@e664ac,AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@fe3e4f added {qtp7864559{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :HttpConnectionFactory@1d8d6f{HTTP/1.1} added {HttpConfiguration@30a1a8{32768,8192/8192,https://:0,[]},POJO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{null}{0.0.0.0:0} added {org.eclipse.jetty.server.Server@fe3e4f,UNMANAGED}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{null}{0.0.0.0:0} added {qtp7864559{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{null}{0.0.0.0:0} added {org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@19a61ad,AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{null}{0.0.0.0:0} added {org.eclipse.jetty.io.ArrayByteBufferPool@1d16dae,POJO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{null}{0.0.0.0:0} added {HttpConnectionFactory@1d8d6f{HTTP/1.1},AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{HTTP/1.1}{0.0.0.0:0} added {org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1e6f06c,MANAGED}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@fe3e4f added {ServerConnector@1846058{HTTP/1.1}{0.0.0.0:80},AUTO}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@fe3e4f added {spark.webserver.JettyHandler@1652035,AUTO}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.Server@fe3e4f
+
+[2013-11-08 11:49]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 11:49] DEBUG [AbstractHandler(doStart:57)] :starting org.eclipse.jetty.server.Server@fe3e4f
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting qtp7864559{STOPPED,8<=0<=200,i=0,q=0}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED qtp7864559{STARTED,8<=8<=200,i=7,q=0}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting spark.webserver.JettyHandler@1652035
+
+[2013-11-08 11:49] DEBUG [AbstractHandler(doStart:57)] :starting spark.webserver.JettyHandler@1652035
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionManager@e664ac
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionIdManager@14b4248
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionIdManager@14b4248
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@fe3e4f added {org.eclipse.jetty.server.session.HashSessionIdManager@14b4248,MANAGED}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionManager@e664ac
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED spark.webserver.JettyHandler@1652035
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting ServerConnector@1846058{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:49] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1846058{HTTP/1.1}{0.0.0.0:80} added {sun.nio.ch.ServerSocketChannelImpl[/0:0:0:0:0:0:0:0:80],POJO}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@19a61ad
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@19a61ad
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting HttpConnectionFactory@1d8d6f{HTTP/1.1}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED HttpConnectionFactory@1d8d6f{HTTP/1.1}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1e6f06c
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@154884c keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@154884c keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=8,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@154884c keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-17-selector-0,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@154884c keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=7,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-18-selector-1,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=6,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-19-selector-2,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=5,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-20-selector-3,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=4,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@715560 keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-21-selector-4,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@715560 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=3,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@715560 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@9c38d5 keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-22-selector-5,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@715560 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@9c38d5 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=2,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@9c38d5 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@160e09f keys=-1 selected=-1
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-23-selector-6,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@9c38d5 keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@160e09f keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=8<=200,i=1,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@160e09f keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1e6f06c
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp7864559-24-selector-7,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@160e09f keys=0 selected=0
+
+[2013-11-08 11:49] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=9<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@18be596
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=9<=200,i=1,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@f0aab8
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=10<=200,i=0,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@a69082
+
+[2013-11-08 11:49] DEBUG [QueuedThreadPool(dispatch:342)] :qtp7864559{STARTED,8<=11<=200,i=1,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@108dacb
+
+[2013-11-08 11:49]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@1846058{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED ServerConnector@1846058{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:49] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.Server@fe3e4f
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Step 0: load conf
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Step 1: Login
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Hangshow-Feed
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :test-sheet
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :Step 4: Select Main Sheet
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	[Main] worksheet size:1
+
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오전 11:50:17
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	[RegIdList] worksheet size:29
+
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: 1	userid: 1
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :	regid: id	userid: userid
+
+[2013-11-08 11:50] DEBUG [RouteMatcherFactory(get:35)] :creates RouteMatcher
+
+[2013-11-08 11:50] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/insert, ServerMain$1@1bff971
+
+[2013-11-08 11:50] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/regid, ServerMain$2@91a829
+
+[2013-11-08 11:50] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/list, ServerMain$3@1ec6a9a
+
+[2013-11-08 11:50] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /hello, ServerMain$4@1466e67
+
+[2013-11-08 11:50] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: post, /hello, ServerMain$5@1d446f3
+
+[2013-11-08 11:50]  INFO [ServerMain(log:80)] :!!!!START!!!!
+
+[2013-11-08 11:50] DEBUG [Log(initialized:173)] :Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :spark.webserver.JettyHandler@9e871 added {org.eclipse.jetty.server.session.HashSessionManager@1afb644,AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@be5303 added {qtp18380450{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :HttpConnectionFactory@13f9590{HTTP/1.1} added {HttpConfiguration@1744a9c{32768,8192/8192,https://:0,[]},POJO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{null}{0.0.0.0:0} added {org.eclipse.jetty.server.Server@be5303,UNMANAGED}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{null}{0.0.0.0:0} added {qtp18380450{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{null}{0.0.0.0:0} added {org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@616915,AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{null}{0.0.0.0:0} added {org.eclipse.jetty.io.ArrayByteBufferPool@1a7422e,POJO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{null}{0.0.0.0:0} added {HttpConnectionFactory@13f9590{HTTP/1.1},AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:0} added {org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@f997aa,MANAGED}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@be5303 added {ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:80},AUTO}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@be5303 added {spark.webserver.JettyHandler@9e871,AUTO}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.Server@be5303
+
+[2013-11-08 11:50]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 11:50] DEBUG [AbstractHandler(doStart:57)] :starting org.eclipse.jetty.server.Server@be5303
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting qtp18380450{STOPPED,8<=0<=200,i=0,q=0}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED qtp18380450{STARTED,8<=8<=200,i=7,q=0}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting spark.webserver.JettyHandler@9e871
+
+[2013-11-08 11:50] DEBUG [AbstractHandler(doStart:57)] :starting spark.webserver.JettyHandler@9e871
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionManager@1afb644
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionIdManager@159e008
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionIdManager@159e008
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@be5303 added {org.eclipse.jetty.server.session.HashSessionIdManager@159e008,MANAGED}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionManager@1afb644
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED spark.webserver.JettyHandler@9e871
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:50] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:80} added {sun.nio.ch.ServerSocketChannelImpl[/0:0:0:0:0:0:0:0:80],POJO}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@616915
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@616915
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting HttpConnectionFactory@13f9590{HTTP/1.1}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED HttpConnectionFactory@13f9590{HTTP/1.1}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@f997aa
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@7ed263 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@7ed263 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=8,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@7ed263 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@f0ac4 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-17-selector-0,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@7ed263 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@f0ac4 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=7,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@f0ac4 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@18de5e7 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-18-selector-1,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@f0ac4 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@18de5e7 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=6,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@18de5e7 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@583b71 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-19-selector-2,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@18de5e7 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@583b71 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=5,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@583b71 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@a69082 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-20-selector-3,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@583b71 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@a69082 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=4,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@a69082 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1598095 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-21-selector-4,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@a69082 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1598095 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=3,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1598095 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@108dacb keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-22-selector-5,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1598095 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@108dacb keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=2,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@108dacb keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@5468d5 keys=-1 selected=-1
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-23-selector-6,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@108dacb keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@5468d5 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=8<=200,i=1,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@5468d5 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@f997aa
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp18380450-24-selector-7,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@5468d5 keys=0 selected=0
+
+[2013-11-08 11:50] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=9<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@b7dc78
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=9<=200,i=1,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@eb4dba
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=10<=200,i=0,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@6c9c37
+
+[2013-11-08 11:50] DEBUG [QueuedThreadPool(dispatch:342)] :qtp18380450{STARTED,8<=11<=200,i=1,q=1} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@157e43
+
+[2013-11-08 11:50]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED ServerConnector@1f6fa3f{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:50] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.Server@be5303
+
+[2013-11-08 11:52]  INFO [ServerMain(init:151)] :Step 0: load conf
+
+[2013-11-08 11:52]  INFO [ServerMain(init:154)] :Step 1: Login
+
+[2013-11-08 11:52]  INFO [ServerMain(init:162)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 11:52]  INFO [ServerMain(init:167)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 11:52]  INFO [ServerMain(init:171)] :Hangshow-Feed
+
+[2013-11-08 11:52]  INFO [ServerMain(init:171)] :test-sheet
+
+[2013-11-08 11:52]  INFO [ServerMain(init:177)] :Step 4: Select Main Sheet
+
+[2013-11-08 11:52]  INFO [ServerMain(init:202)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 11:52]  INFO [ServerMain(init:210)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 11:52]  INFO [ServerMain(init:206)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:418)] :	[Main] worksheet size:1
+
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오전 11:50:17
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:418)] :	[RegIdList] worksheet size:29
+
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 11:52] DEBUG [RouteMatcherFactory(get:35)] :creates RouteMatcher
+
+[2013-11-08 11:52] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/insert, ServerMain$1@124298d
+
+[2013-11-08 11:52] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/regid, ServerMain$2@1240236
+
+[2013-11-08 11:52] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /onair/list, ServerMain$3@725f5
+
+[2013-11-08 11:52] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: get, /hello, ServerMain$4@1ac385a
+
+[2013-11-08 11:52] DEBUG [SimpleRouteMatcher(addRoute:243)] :Adds route: post, /hello, ServerMain$5@1a7da17
+
+[2013-11-08 11:52]  INFO [ServerMain(main:377)] :!!!!START!!!!
+
+[2013-11-08 11:52] DEBUG [Log(initialized:173)] :Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :spark.webserver.JettyHandler@2438db added {org.eclipse.jetty.server.session.HashSessionManager@171179a,AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@1e8184f added {qtp14394509{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :HttpConnectionFactory@13b8493{HTTP/1.1} added {HttpConfiguration@7cdff0{32768,8192/8192,https://:0,[]},POJO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{null}{0.0.0.0:0} added {org.eclipse.jetty.server.Server@1e8184f,UNMANAGED}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{null}{0.0.0.0:0} added {qtp14394509{STOPPED,8<=0<=200,i=0,q=0},AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{null}{0.0.0.0:0} added {org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@c14dd1,AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{null}{0.0.0.0:0} added {org.eclipse.jetty.io.ArrayByteBufferPool@a34f04,POJO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{null}{0.0.0.0:0} added {HttpConnectionFactory@13b8493{HTTP/1.1},AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{HTTP/1.1}{0.0.0.0:0} added {org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1461829,MANAGED}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@1e8184f added {ServerConnector@1da694{HTTP/1.1}{0.0.0.0:80},AUTO}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@1e8184f added {spark.webserver.JettyHandler@2438db,AUTO}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.Server@1e8184f
+
+[2013-11-08 11:52]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 11:52] DEBUG [AbstractHandler(doStart:57)] :starting org.eclipse.jetty.server.Server@1e8184f
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting qtp14394509{STOPPED,8<=0<=200,i=0,q=0}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED qtp14394509{STARTED,8<=8<=200,i=7,q=0}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting spark.webserver.JettyHandler@2438db
+
+[2013-11-08 11:52] DEBUG [AbstractHandler(doStart:57)] :starting spark.webserver.JettyHandler@2438db
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionManager@171179a
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.session.HashSessionIdManager@f3cbe6
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionIdManager@f3cbe6
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :org.eclipse.jetty.server.Server@1e8184f added {org.eclipse.jetty.server.session.HashSessionIdManager@f3cbe6,MANAGED}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.session.HashSessionManager@171179a
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED spark.webserver.JettyHandler@2438db
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting ServerConnector@1da694{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:52] DEBUG [ContainerLifeCycle(addBean:302)] :ServerConnector@1da694{HTTP/1.1}{0.0.0.0:80} added {sun.nio.ch.ServerSocketChannelImpl[/0:0:0:0:0:0:0:0:80],POJO}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@c14dd1
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@c14dd1
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting HttpConnectionFactory@13b8493{HTTP/1.1}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED HttpConnectionFactory@13b8493{HTTP/1.1}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1461829
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1cb687f keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1cb687f keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=8,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1cb687f keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@8ff4b0 keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-16-selector-0,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1cb687f keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@8ff4b0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=7,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@8ff4b0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c93bea keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-17-selector-1,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@8ff4b0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c93bea keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=6,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c93bea keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-18-selector-2,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c93bea keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=5,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1e74a6e keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-19-selector-3,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@6274e0 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1e74a6e keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=4,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1e74a6e keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-20-selector-4,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1e74a6e keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=3,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-21-selector-5,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1c7a9de keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=2,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarting:184)] :starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=-1 selected=-1
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-22-selector-6,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1615ef2 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=8<=200,i=1,q=0} dispatched org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@1461829
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(run:433)] :Starting Thread[qtp14394509-23-selector-7,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@1a07924 keys=0 selected=0
+
+[2013-11-08 11:52] DEBUG [SelectorManager$ManagedSelector(select:458)] :Selector loop waiting on select
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=9<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@5d7a8a
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=9<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@1b1d085
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=10<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@18be596
+
+[2013-11-08 11:52] DEBUG [QueuedThreadPool(dispatch:342)] :qtp14394509{STARTED,8<=11<=200,i=1,q=0} dispatched org.eclipse.jetty.server.AbstractConnector$Acceptor@f0aab8
+
+[2013-11-08 11:52]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@1da694{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED ServerConnector@1da694{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 11:52] DEBUG [AbstractLifeCycle(setStarted:177)] :STARTED org.eclipse.jetty.server.Server@1e8184f
+
+[2013-11-08 12:37]  INFO [ServerMain(init:151)] :Step 0: load conf
+
+[2013-11-08 12:37]  INFO [ServerMain(init:154)] :Step 1: Login
+
+[2013-11-08 12:37]  INFO [ServerMain(init:162)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 12:38]  INFO [ServerMain(init:167)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 12:38]  INFO [ServerMain(init:171)] :Hangshow-Feed
+
+[2013-11-08 12:38]  INFO [ServerMain(init:171)] :test-sheet
+
+[2013-11-08 12:38]  INFO [ServerMain(init:177)] :Step 4: Select Main Sheet
+
+[2013-11-08 12:38]  INFO [ServerMain(init:202)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 12:38]  INFO [ServerMain(init:210)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 12:38]  INFO [ServerMain(init:206)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:418)] :	[Main] worksheet size:1
+
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 12:39:01
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:418)] :	[RegIdList] worksheet size:30
+
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: id	userid: userid
+
+[2013-11-08 12:38]  INFO [ServerMain(printAllRows:434)] :	regid: 1	userid: 1
+
+[2013-11-08 12:38]  INFO [ServerMain(main:377)] :!!!!START!!!!
+
+[2013-11-08 12:38]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 12:38]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@126557e{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 12:39]  INFO [ServerMain(init:152)] :Step 0: load conf
+
+[2013-11-08 12:39]  INFO [ServerMain(loadConf:93)] :{google-id=gdg.hangshow@gmail.com, password=Hangsh0wBest}
+
+[2013-11-08 12:39]  INFO [ServerMain(init:155)] :Step 1: Login
+
+[2013-11-08 12:39]  INFO [ServerMain(init:163)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 12:39]  INFO [ServerMain(init:168)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 12:39]  INFO [ServerMain(init:172)] :Hangshow-Feed
+
+[2013-11-08 12:39]  INFO [ServerMain(init:172)] :test-sheet
+
+[2013-11-08 12:39]  INFO [ServerMain(init:178)] :Step 4: Select Main Sheet
+
+[2013-11-08 12:39]  INFO [ServerMain(init:203)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 12:39]  INFO [ServerMain(init:211)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 12:39]  INFO [ServerMain(init:207)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:419)] :	[Main] worksheet size:1
+
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 12:39:01
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:419)] :	[RegIdList] worksheet size:30
+
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:39]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:39]  INFO [ServerMain(main:378)] :!!!!START!!!!
+
+[2013-11-08 12:39]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 12:39]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@126557e{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 12:40]  INFO [ServerMain(init:152)] :Step 0: load conf
+
+[2013-11-08 12:40]  INFO [ServerMain(loadConf:93)] :{google-id=gdg.hangshow@gmail.com, password=Hangsh0wBest}
+
+[2013-11-08 12:40]  INFO [ServerMain(init:155)] :Step 1: Login
+
+[2013-11-08 12:40]  INFO [ServerMain(init:163)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 12:40]  INFO [ServerMain(init:168)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 12:40]  INFO [ServerMain(init:172)] :Hangshow-Feed
+
+[2013-11-08 12:40]  INFO [ServerMain(init:172)] :test-sheet
+
+[2013-11-08 12:40]  INFO [ServerMain(init:178)] :Step 4: Select Main Sheet
+
+[2013-11-08 12:40]  INFO [ServerMain(init:203)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 12:40]  INFO [ServerMain(init:211)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 12:40]  INFO [ServerMain(init:207)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:419)] :	[Main] worksheet size:1
+
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 12:39:01
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:419)] :	[RegIdList] worksheet size:30
+
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 12:40]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 12:40]  INFO [ServerMain(main:378)] :!!!!START!!!!
+
+[2013-11-08 12:40]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 12:40]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@126557e{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 13:31]  INFO [ServerMain(init:152)] :Step 0: load conf
+
+[2013-11-08 13:31]  INFO [ServerMain(loadConf:93)] :{google-id=gdg.hangshow@gmail.com, password=Hangsh0wBest}
+
+[2013-11-08 13:31]  INFO [ServerMain(init:155)] :Step 1: Login
+
+[2013-11-08 13:31]  INFO [ServerMain(init:163)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 13:31]  INFO [ServerMain(init:168)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 13:31]  INFO [ServerMain(init:172)] :Hangshow-Feed
+
+[2013-11-08 13:31]  INFO [ServerMain(init:172)] :test-sheet
+
+[2013-11-08 13:31]  INFO [ServerMain(init:178)] :Step 4: Select Main Sheet
+
+[2013-11-08 13:31]  INFO [ServerMain(init:203)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 13:31]  INFO [ServerMain(init:211)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 13:31]  INFO [ServerMain(init:207)] :	[RegId WorkSheet]: RegIdList -  rows:95 cols: 20
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:419)] :	[Main] worksheet size:1
+
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 1:32:08
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:419)] :	[RegIdList] worksheet size:30
+
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: id	userid: userid
+
+[2013-11-08 13:31]  INFO [ServerMain(printAllRows:435)] :	regid: 1	userid: 1
+
+[2013-11-08 13:31]  INFO [ServerMain(main:378)] :!!!!START!!!!
+
+[2013-11-08 13:31]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 13:31]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@126557e{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:41]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:41]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:45]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:45]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:45]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:45]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 13:46]  INFO [ServerMain$3(handle:278)] :GET http://localhost/onair/list,Query:
+
+[2013-11-08 13:46]  INFO [ServerMain(printAllJson:446)] :[printAllJson] worksheet size:1
+
+
+[2013-11-08 13:46]  INFO [ServerMain(printAllJson:458)] :Json:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 1:32:08","ownerid":"11111"}]
+
+[2013-11-08 14:23]  INFO [ServerMain$1(handle:225)] :GET http://localhost/onair/insert,Query:youtubecontentid=youtube-id&title=&description=&tags=devfest2013&timestart=11:00:00
+
+[2013-11-08 14:23]  INFO [ServerMain(printAllRows:419)] :	[Main] worksheet size:2
+
+
+[2013-11-08 14:23]  INFO [ServerMain(printAllRows:435)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:24:44
+
+[2013-11-08 14:23]  INFO [ServerMain(printAllRows:435)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:23]  INFO [ServerMain(sendGCM:135)] :getHTML:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 2:24:44","ownerid":"11111"},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null}]
+
+[2013-11-08 14:23]  INFO [ServerMain(sendGCM:140)] :Push Seuccess!
+
+[2013-11-08 14:51]  INFO [ServerMain(init:394)] :Step 0: load conf
+
+[2013-11-08 14:51]  INFO [ServerMain(loadConf:313)] :{google-id=gdg.hangshow@gmail.com, password=Hangsh0wBest}
+
+[2013-11-08 14:51]  INFO [ServerMain(init:397)] :Step 1: Login
+
+[2013-11-08 14:51]  INFO [ServerMain(init:405)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 14:51]  INFO [ServerMain(init:410)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 14:51]  INFO [ServerMain(init:414)] :Hangshow-Feed
+
+[2013-11-08 14:51]  INFO [ServerMain(init:414)] :test-sheet
+
+[2013-11-08 14:51]  INFO [ServerMain(init:420)] :Step 4: Select Main Sheet
+
+[2013-11-08 14:51]  INFO [ServerMain(init:445)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 14:51]  INFO [ServerMain(init:453)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 14:51]  INFO [ServerMain(init:449)] :	[RegId WorkSheet]: RegIdList -  rows:65 cols: 20
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:2
+
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:51:29
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:206)] :	[RegIdList] worksheet size:9
+
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: null
+
+[2013-11-08 14:52]  INFO [ServerMain(main:165)] :!!!!START!!!!
+
+[2013-11-08 14:52]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 14:52]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@19be851{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 14:52]  INFO [ServerMain$3(handle:467)] :GET http://localhost/onair/insert,Query:youtubecontentid=youtube-id&title=&description=&tags=devfest2013&timestart=11:00:00
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:3
+
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:53:05
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:52]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:52]  INFO [ServerMain(sendGCM:373)] :getHTML:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 2:53:05","ownerid":"11111"},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null}]
+
+[2013-11-08 14:54]  INFO [ServerMain(init:396)] :Step 0: load conf
+
+[2013-11-08 14:54]  INFO [ServerMain(loadConf:313)] :{google-id=gdg.hangshow@gmail.com, password=Hangsh0wBest}
+
+[2013-11-08 14:54]  INFO [ServerMain(init:399)] :Step 1: Login
+
+[2013-11-08 14:54]  INFO [ServerMain(init:407)] :Step 2: SpreadSheet Entries
+
+[2013-11-08 14:54]  INFO [ServerMain(init:412)] :Step 3: Show SpreadSheet's Name
+
+[2013-11-08 14:54]  INFO [ServerMain(init:416)] :Hangshow-Feed
+
+[2013-11-08 14:54]  INFO [ServerMain(init:416)] :test-sheet
+
+[2013-11-08 14:54]  INFO [ServerMain(init:422)] :Step 4: Select Main Sheet
+
+[2013-11-08 14:54]  INFO [ServerMain(init:447)] :	[Main WorkSheet]: Main -  rows:62 cols: 20
+
+[2013-11-08 14:54]  INFO [ServerMain(init:455)] :	[Sub WorkSheet]: Ready -  rows:100 cols: 20
+
+[2013-11-08 14:54]  INFO [ServerMain(init:451)] :	[RegId WorkSheet]: RegIdList -  rows:65 cols: 20
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:3
+
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:53:05
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:206)] :	[RegIdList] worksheet size:9
+
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bFnEeAN_VnAuOOeTQ3BRnqGr2w53ETt2YnosrvmGmtDgoWnPDdp6MmfXZ9eFyMqgMO_ikpk4GBCdQ3YwHLSkr3eftXKUCzlFc4pHla93okwlC5-ro98ULQcxOi1kg1TqetHvcfFsArz2zvmbf9LFeUZC_S4bA	userid: 1111
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: yong0761@gmail.com
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	regid: APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w	userid: null
+
+[2013-11-08 14:54]  INFO [ServerMain(main:165)] :!!!!START!!!!
+
+[2013-11-08 14:54]  INFO [Server(doStart:290)] :jetty-9.0.2.v20130417
+
+[2013-11-08 14:54]  INFO [AbstractConnector(doStart:265)] :Started ServerConnector@1e3a31c{HTTP/1.1}{0.0.0.0:80}
+
+[2013-11-08 14:54]  INFO [ServerMain$3(handle:469)] :GET http://localhost/onair/insert,Query:youtubecontentid=youtube-id&title=&description=&tags=devfest2013&timestart=11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:4
+
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:55:24
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:373)] :getHTML:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 2:55:24","ownerid":"11111"},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null}]
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:54]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 14:55]  INFO [ServerMain$3(handle:469)] :GET http://localhost/onair/insert,Query:youtubecontentid=youtube-id&title=&description=&tags=devfest2013&timestart=11:00:00
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:5
+
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 2:56:05
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:55]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 14:55]  INFO [ServerMain(sendGCM:373)] :getHTML:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 2:56:05","ownerid":"11111"},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null}]
+
+[2013-11-08 14:55]  INFO [ServerMain(sendGCM:379)] :	Success: regid - APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w
+
+[2013-11-08 14:55]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
+[2013-11-08 15:35]  INFO [ServerMain$3(handle:469)] :GET http://localhost/onair/insert,Query:youtubecontentid=youtube-id&title=&description=&tags=devfest2013&timestart=11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:206)] :	[Main] worksheet size:6
+
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: EfDfdyBldz0	title: GDG인천 소개	description: GDG인천의 아늑한 보금자리 소개 영상입니다.	tags: GDG, incheon, 	ownerid: 11111	conferencename: devfest2013	timestart: 2013. 11. 8 오후 3:36:02
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(printAllRows:222)] :	youtubecontentid: youtube-id	title: null	description: null	tags: devfest2013	ownerid: null	conferencename: null	timestart: 오전 11:00:00
+
+[2013-11-08 15:35]  INFO [ServerMain(sendGCM:373)] :getHTML:[{"tags":"GDG, incheon, ","youtubecontentid":"EfDfdyBldz0","title":"GDG인천 소개","description":"GDG인천의 아늑한 보금자리 소개 영상입니다.","conferencename":"devfest2013","timestart":"2013. 11. 8 오후 3:36:02","ownerid":"11111"},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null},{"tags":"devfest2013","youtubecontentid":"youtube-id","title":null,"description":null,"conferencename":null,"timestart":"오전 11:00:00","ownerid":null}]
+
+[2013-11-08 15:35]  INFO [ServerMain(sendGCM:379)] :	Success: regid - APA91bE8Z1lshNom6S8DUmi4XSSRVT6nlbwsGEw7d1ik9wfQwtUGfWFzUFQyQdWBkyz3doI-bvzZd976aN81MezdBNBl7mdiYvbO5PWOUyUhrU5z4IT85tiEe5D3P4FSucbjn1LWw97IjS39VWps2a-uanSl3aLN4w
+
+[2013-11-08 15:35]  INFO [ServerMain(sendGCM:379)] :	Success: regid - null
+
